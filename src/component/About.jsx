@@ -5,6 +5,7 @@ import dan from './img/dan.jpg';
 import {
 	FaArrowRight,
 	FaCode,
+	FaDownload,
 	FaGit,
 	FaGithub,
 	FaGraduationCap,
@@ -28,6 +29,10 @@ import {
 } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
+import { SiTailwindcss } from 'react-icons/si';
+import { IoDownload, IoLogoJavascript } from 'react-icons/io5';
+import { FaGitAlt } from 'react-icons/fa6';
+import cv from '../assets/Daniel Agbeni New CV.pdf';
 
 const About = () => {
 	const [scrollX, setScrollX] = useState(0);
@@ -37,6 +42,17 @@ const About = () => {
 	useEffect(() => {
 		AOS.init();
 	}, []);
+	const downloadPDF = () => {
+		const pdfUrl = require(`./${cv}`).default;
+
+		const link = document.createElement('a');
+		link.href = pdfUrl;
+		link.setAttribute('download', 'downloaded-file.pdf');
+
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	};
 	return (
 		<div className='w-full h-full flex flex-col items-center px-5 mb-6'>
 			<div className='flex items-center justify-center p-2'>
@@ -44,52 +60,36 @@ const About = () => {
 					Who I am
 				</p>
 			</div>
-			{/* <div className='flex items-center justify-center gap-4 mb-20'>
-				<div className='flex flex-col items-center justify-center px-40'>
-					<p
-						className='md:text-lg text-gray-200 w-full text-center px-60 md:p-12'
-						data-aos='fade-up'>
-						Daniel Agbeni Oluwafemi is a versatile individual excelling as a
-						frontend web developer, computer scientist, and YouTuber. With a
-						strong technical background and creative skills, I create innovative
-						web solutions while also sharing my knowledge through engaging
-						videos on youtube. My multidimensional expertise and passion drive
-						my impactful contributions in the tech and online communities.
-					</p>
-					<div className='grid grid-cols-1 md:grid-cols-3 items-center justify-center p-3 rounded-2xl drop-shadow-2xl gap-10 w-full mt-20 relative'>
-						<FaCode className=' text-6xl font-extralight text-white border-white rounded-3xl hover:scale-110' />
-						<FaYoutube className=' text-6xl font-extralight text-red-600 rounded-3xl hover:scale-110' />
-						<MdComputer className=' text-6xl font-extralight text-white rounded-3xl hover:scale-110' />
-						<FaReact className=' text-6xl font-extralight text-white hover:scale-110' />
-						<FaGithub className='text-6xl font-extralight text-whiterounded-3xl hover:scale-110' />
-						<FaGit className=' text-6xl font-extralight text-white rounded-3xl hover:scale-110' />
-						<FaPython className=' text-6xl font-extralight text-white rounded-3xl hover:scale-110' />
-						<FaJava className=' text-6xl font-extralight text-white rounded-3xl hover:scale-110' />
-						<MdJavascript className=' text-6xl font-extralight text-white rounded-3xl hover:scale-110' />
-					</div>
-				</div>
-			</div> */}
+
 			<div>
-				<div>
-					<p className='text-gray-200 text-center'>
-						Daniel Agbeni Oluwafemi is a versatile individual excelling as a
-						frontend web developer, computer scientist, and YouTuber. With a
+				<div className=' flex flex-col items-center justify-center'>
+					<p className='text-gray-200 text-center md:text-2xl md:px-0 md:w-full w-full'>
+						I am Daniel Agbeni Oluwafemi is a versatile individual excelling as
+						a frontend web developer, computer scientist, and YouTuber. With a
 						strong technical background and creative skills, I create innovative
 						web solutions while also sharing my knowledge through engaging
 						videos on youtube. My multidimensional expertise and passion drive
 						my impactful contributions in the tech and online communities.
 					</p>
+					<button
+						className=' flex items-center justify-center py-3 px-6 rounded-full mt-5 text-lg text-white color-change gap-2 hover:animate-pulse hover:scale-105 cursor-pointer'
+						onClick={downloadPDF}>
+						Download Potfolio <FaDownload className=' animate-bounce' />
+					</button>
 				</div>
-				<div className='flex justify-center items-center my-14'>
-					<FaCode className=' text-6xl font-extralight text-white border-white rounded-3xl hover:scale-110' />
-					<FaYoutube className=' text-6xl font-extralight text-red-600 rounded-3xl hover:scale-110' />
-					<MdComputer className=' text-6xl font-extralight text-white rounded-3xl hover:scale-110' />
-					<FaReact className=' text-6xl font-extralight text-white hover:scale-110' />
-					<FaGithub className='text-6xl font-extralight text-whiterounded-3xl hover:scale-110' />
-					<FaGit className=' text-6xl font-extralight text-white rounded-3xl hover:scale-110' />
-					<FaPython className=' text-6xl font-extralight text-white rounded-3xl hover:scale-110' />
-					<FaJava className=' text-6xl font-extralight text-white rounded-3xl hover:scale-110' />
-					<MdJavascript className=' text-6xl font-extralight text-white rounded-3xl hover:scale-110' />
+				<div className=' text-center md:text-4xl text-2xl mt-10 mb-6 text-white font-bold '>
+					Technologies I use
+				</div>
+				<div className='flex justify-center items-center mb-14 gap-3 '>
+					<FaCode className=' md:text-6xl text-2xl  font-extralight text-white border-white rounded-3xl hover:scale-110' />
+					<FaYoutube className=' md:text-6xl text-2xl  font-extralight text-red-600 rounded-3xl hover:scale-110' />
+					<FaReact className=' md:text-6xl text-2xl  font-extralight text-sky-400 hover:scale-110' />
+					<FaGithub className='md:text-6xl text-2xl  font-extralight text-whiterounded-3xl hover:scale-110' />
+					<FaGitAlt className=' md:text-6xl text-2xl  font-extralight text-orange-500 rounded-3xl hover:scale-110' />
+					<FaPython className=' md:text-6xl text-2xl  font-extralight text-white rounded-3xl hover:scale-110' />
+					<FaJava className=' md:text-6xl text-2xl  font-extralight text-white rounded-3xl hover:scale-110' />
+					<IoLogoJavascript className=' md:text-6xl text-2xl  font-extralight text-yellow-500 hover:scale-110' />
+					<SiTailwindcss className='md:text-6xl text-2xl  font-extralight text-blue-500 rounded-3xl hover:scale-110' />
 				</div>
 			</div>
 

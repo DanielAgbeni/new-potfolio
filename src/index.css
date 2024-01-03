@@ -4,6 +4,7 @@
 @import 'tailwindcss/utilities';
 
 @import url('https://fonts.cdnfonts.com/css/jetbrains-mono');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -29,25 +30,30 @@ body {
 	font-variant: small-caps;
 	color: #dfdfdfe1;
 }
+
 .sde {
 	font-size: 30pt;
 	color: #eee;
 	height: fit-content;
 }
+
 /* Body */
 .cursor {
 	animation: blink-animation 1s infinite;
 }
 
 @keyframes blink-animation {
+
 	0%,
 	100% {
 		opacity: 1;
 	}
+
 	50% {
 		opacity: 0;
 	}
 }
+
 .body {
 	padding: 1.5em;
 	margin-left: 30px;
@@ -63,6 +69,7 @@ body {
 	border-radius: 26px;
 	width: fit-content;
 }
+
 /* styles.css */
 
 .instagram-text {
@@ -74,4 +81,31 @@ body {
 	color: transparent;
 	display: inline-block;
 	padding: 5px;
+}
+
+@keyframes colorChange {
+	1% {
+		background-color: rgb(153, 27, 27);
+	}
+
+	25% {
+		background-color: gray;
+	}
+
+	50% {
+		background-color: rgb(203, 131, 195);
+	}
+
+	75% {
+		background-color: #38bdf8;
+	}
+
+	100% {
+		background-color: rgb(145, 88, 231);
+	}
+}
+
+.color-change {
+	background-color: rgb(145, 88, 231);
+	animation: colorChange 4s infinite ease-in-out;
 }

@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react'
+import React from 'react';
 import {
 	FaDiscord,
 	FaGithub,
@@ -8,9 +8,9 @@ import {
 	FaTwitter,
 	FaWhatsapp,
 	FaYoutube,
-} from 'react-icons/fa'
-import { MdClose, MdEmail, MdLocationCity, MdSend } from 'react-icons/md'
-import { motion } from 'framer-motion'
+} from 'react-icons/fa';
+import { MdClose, MdEmail, MdLocationCity, MdSend } from 'react-icons/md';
+import { motion } from 'framer-motion';
 
 const Contact = ({ click }) => {
 	return (
@@ -171,7 +171,7 @@ const Contact = ({ click }) => {
 				</div>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export default Contact
+export default Contact;
