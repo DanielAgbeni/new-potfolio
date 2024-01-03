@@ -109,3 +109,63 @@ body {
 	background-color: rgb(145, 88, 231);
 	animation: colorChange 4s infinite ease-in-out;
 }
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #38bdf8;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgb(153, 27, 27);
+	border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #804BF2;
+}
+
+.glitch::before {
+	color: #8f4066;
+	animation: glitch-effect 3s infinite;
+	/* left: 3px; */
+	text-shadow: -1.5px 0 red;
+}
+
+.glitch::after {
+	color: #fff;
+	animation: glitch-effect 3s infinite;
+}
+
+@keyframes glitch-effect {
+	0% {
+		left: -2px;
+		top: -2px;
+	}
+
+	25% {
+		left: 2px;
+		top: 0px;
+	}
+
+	50% {
+		left: 1px;
+		top: 2px;
+	}
+
+	75% {
+		left: 1px;
+		top: -1px;
+	}
+
+	100% {
+		left: 0px;
+		top: -2px;
+	}
+}

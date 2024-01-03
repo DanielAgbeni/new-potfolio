@@ -42,7 +42,7 @@ const Home = () => {
 						className=' object-fit h-44 w-44 rounded-full'
 					/>
 				</div>
-				<p className='text-gray-300 text-3xl sm:text-6xl font-extrabold flex items-center justify-center text-center'>
+				<p className='text-gray-300 text-3xl sm:text-6xl font-extrabold flex items-center justify-center text-center glitch'>
 					Hy, I am Daniel Agbeni
 				</p>
 				<div className='text-3xl text-gray-200 flex items-center justify-center py-3 w-screen font-bold text-center'>
