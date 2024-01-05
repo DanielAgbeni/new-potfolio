@@ -63,7 +63,7 @@ const About = () => {
 					</p>
 
 					<a
-						href='Daniel Agbeni.pdf'
+						href={cv}
 						download>
 						<button className=' flex items-center justify-center py-3 px-6 rounded-full mt-5 text-lg text-white color-change gap-2 hover:animate-pulse hover:scale-105 cursor-pointer'>
 							Download Potfolio <FaDownload className=' animate-bounce' />
