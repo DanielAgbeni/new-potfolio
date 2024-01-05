@@ -19,7 +19,7 @@ import { Link, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import { FaLinkedinIn } from 'react-icons/fa6';
+import { FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 
 const Home = () => {
 	const location = useLocation();
@@ -65,7 +65,7 @@ const Home = () => {
 						<FaGithub className=' text-white text-4xl hover:text-black hover:bg-white rounded-full animate-bounce hover:animate-spin hover:scale-110 cursor-pointer' />
 					</a>
 					<a href='https://twitter.com/Agbeni_Daniel'>
-						<FaTwitter className='text-white text-4xl hover:text-sky-600 hover:scale-110 cursor-pointer animate-bounce hover:animate-spin' />
+						<FaXTwitter className='text-white text-4xl hover:text-black hover:scale-110 cursor-pointer animate-bounce hover:animate-spin' />
 					</a>
 					<a href=''>
 						<FaLinkedinIn className='text-white text-4xl hover:text-blue-600 hover:scale-110 cursor-pointer animate-bounce hover:animate-spin' />
