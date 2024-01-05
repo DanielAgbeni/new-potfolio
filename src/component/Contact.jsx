@@ -67,12 +67,12 @@ const Contact = ({ click }) => {
 						</button>
 					</form>
 				</div>
-				<div class='relative flex items-center justify-center w-full overflow-hidden sm:w-auto'>
+				<div class='relative md:flex hidden items-center justify-center w-full overflow-hidden sm:w-auto'>
 					<p class='font-bold text-gray-400 after:absolute before:absolute after:bg-gray-800  before:bg-gray-800  after:h-[2px] after:w-full before:h-[2px] before:w-full after:top-1/2 after:-translate-y-1/2 before:bottom-1/2 before:-translate-y-1/2 after:-left-[60%] before:-right-[60%] sm:after:translate-y-[unset] sm:before:translate-y-[unset] sm:after:h-full sm:after:-top-[55%] sm:after:left-1/2 sm:after:-translate-x-1/2 sm:after:w-[2px] sm:before:h-full sm:before:-bottom-[55%] sm:before:left-1/2 sm:before:-translate-x-1/2 sm:before:w-[2px] '>
 						OR
 					</p>
 				</div>
-				<div class='w-full sm:w-[40%] flex flex-col gap-10'>
+				<div class='w-full sm:w-[40%] md:flex hidden flex-col gap-10'>
 					<h1 class='font-bold text-gray-200 text-sm'>Contact Me</h1>
 					<ul class='flex flex-col gap-4 text-gray-400'>
 						<li>

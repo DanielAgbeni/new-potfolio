@@ -19,6 +19,7 @@ import { Link, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { FaLinkedinIn } from 'react-icons/fa6';
 
 const Home = () => {
 	const location = useLocation();
@@ -67,7 +68,7 @@ const Home = () => {
 						<FaTwitter className='text-white text-4xl hover:text-sky-600 hover:scale-110 cursor-pointer animate-bounce hover:animate-spin' />
 					</a>
 					<a href=''>
-						<FaDiscord className='text-white text-4xl hover:text-blue-600 hover:scale-110 cursor-pointer animate-bounce hover:animate-spin' />
+						<FaLinkedinIn className='text-white text-4xl hover:text-blue-600 hover:scale-110 cursor-pointer animate-bounce hover:animate-spin' />
 					</a>
 				</div>
 				<div className='flex items-center justify-center mt-4 relative'>

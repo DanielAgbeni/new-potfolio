@@ -42,17 +42,7 @@ const About = () => {
 	useEffect(() => {
 		AOS.init();
 	}, []);
-	const downloadPDF = () => {
-		const pdfUrl = require(`./${cv}`).default;
 
-		const link = document.createElement('a');
-		link.href = pdfUrl;
-		link.setAttribute('download', 'downloaded-file.pdf');
-
-		document.body.appendChild(link);
-		link.click();
-		document.body.removeChild(link);
-	};
 	return (
 		<div className='w-full h-full flex flex-col items-center px-5 mb-6'>
 			<div className='flex items-center justify-center p-2'>
@@ -71,11 +61,14 @@ const About = () => {
 						videos on youtube. My multidimensional expertise and passion drive
 						my impactful contributions in the tech and online communities.
 					</p>
-					<button
-						className=' flex items-center justify-center py-3 px-6 rounded-full mt-5 text-lg text-white color-change gap-2 hover:animate-pulse hover:scale-105 cursor-pointer'
-						onClick={downloadPDF}>
-						Download Potfolio <FaDownload className=' animate-bounce' />
-					</button>
+
+					<a
+						href='Daniel Agbeni.pdf'
+						download>
+						<button className=' flex items-center justify-center py-3 px-6 rounded-full mt-5 text-lg text-white color-change gap-2 hover:animate-pulse hover:scale-105 cursor-pointer'>
+							Download Potfolio <FaDownload className=' animate-bounce' />
+						</button>
+					</a>
 				</div>
 				<div className=' text-center md:text-4xl text-2xl mt-10 mb-6 text-white font-bold '>
 					Technologies I use

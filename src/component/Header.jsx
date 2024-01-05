@@ -1,15 +1,16 @@
 /** @format */
 
-import React, { useState } from 'react'
-import { MdClose, MdMenu } from 'react-icons/md'
-import { Link, useLocation } from 'react-router-dom'
-import Contact from './Contact'
+import React, { useState } from 'react';
+import { MdClose, MdContactPhone, MdMenu } from 'react-icons/md';
+import { Link, useLocation } from 'react-router-dom';
+import Contact from './Contact';
+import { FaPhone } from 'react-icons/fa6';
 
 const Header = () => {
-	const [isMenu, setIsMenu] = useState(false)
-	const [contact, setContact] = useState(false)
-	const location = useLocation()
-	const current = location.pathname === location
+	const [isMenu, setIsMenu] = useState(false);
+	const [contact, setContact] = useState(false);
+	const location = useLocation();
+	const current = location.pathname === location;
 
 	return (
 		<header className='fixed z-50 w-screen h-20 p-3 px-4 md:p-4 md:px-16 bg-gradient-to-br from-red-800 via-gray-700 to-sky-400 drop-shadow-xl'>
@@ -52,7 +53,7 @@ const Header = () => {
 							<li
 								className={`cursor-pointer  hover:text-white text-${
 									location.pathname === '/potfolio' ? 'white' : 'gray-400'
-								}  duration-100 transition-all ease-in-out text-xl font-semibold`}
+								}  duration-100 transition-all ease-in-out text-xl font-semibold `}
 								onClick={() => setContact(false)}>
 								{' '}
 								Potfolio
@@ -60,10 +61,10 @@ const Header = () => {
 						</Link>
 
 						<li
-							className={`cursor-pointer  hover:text-white text-gray-400  duration-100 transition-all ease-in-out text-xl font-semibold`}
+							className={`cursor-pointer  hover:text-white text-gray-400  duration-100 transition-all ease-in-out text-xl font-semibold flex items-center justify-center rounded-full py-3 px-6 bg-blue-600 hover:bg-blue-400`}
 							onClick={() => setContact(!contact)}>
 							{' '}
-							Contact
+							<FaPhone />
 						</li>
 					</ul>
 				</div>
@@ -72,7 +73,9 @@ const Header = () => {
 			{/* Mobile */}
 			<div className='flex items-center justify-between md:hidden w-full h-full'>
 				<p className='logo'>Daniel Agbeni</p>
-				<div className='relative' onClick={() => setIsMenu(!isMenu)}>
+				<div
+					className='relative'
+					onClick={() => setIsMenu(!isMenu)}>
 					{isMenu ? (
 						<MdClose className='text-3xl font-extrabold text-red-600 duration-500' />
 					) : (
@@ -119,8 +122,8 @@ const Header = () => {
 								<li
 									className='cursor-pointer font-extrabold hover:text-white text-black duration-500 bg-blue-300 rounded-lg transition-all ease-in-out px-4 py-2 '
 									onClick={() => {
-										setIsMenu(false)
-										setContact(!contact)
+										setIsMenu(false);
+										setContact(!contact);
 									}}>
 									Contact
 								</li>
@@ -132,7 +135,7 @@ const Header = () => {
 				{contact ? <Contact click={setContact} /> : ''}
 			</div>
 		</header>
-	)
-}
+	);
+};
 
-export default Header
+export default Header;
