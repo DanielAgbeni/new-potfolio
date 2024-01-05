@@ -41,7 +41,7 @@ export const works = [
 	{
 		id: 3,
 		title: 'Trippy',
-		link: 'https://danielagbeni.netlify.app',
+		link: 'https://my-trippy.netlify.app/',
 		githubLink: 'https://danielagbeni.netlify.app',
 		description: 'A trip planner website',
 		mobileimg: trippym,
@@ -70,7 +70,7 @@ export const works = [
 		title: 'Online Image Gallery',
 		link: 'https://onlineimagegallery.netlify.app',
 		githubLink: 'https://danielagbeni.netlify.app',
-		description: 'An Online image galerry to look up for pictures',
+		description: 'An Online image gallery to look up for pictures',
 		mobileimg: pro5,
 		pcimg: pro6,
 	},
