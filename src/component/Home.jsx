@@ -67,7 +67,7 @@ const Home = () => {
 					<a href='https://twitter.com/Agbeni_Daniel'>
 						<FaXTwitter className='text-white text-4xl hover:text-black hover:scale-110 cursor-pointer animate-bounce hover:animate-spin' />
 					</a>
-					<a href=''>
+					<a href='https://www.linkedin.com/in/daniel-agbeni-5461ab297/'>
 						<FaLinkedinIn className='text-white text-4xl hover:text-blue-600 hover:scale-110 cursor-pointer animate-bounce hover:animate-spin' />
 					</a>
 				</div>
