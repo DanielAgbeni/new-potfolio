@@ -35,6 +35,9 @@ import { FaGitAlt } from 'react-icons/fa6';
 import cv from '../assets/Daniel Agbeni New CV.pdf';
 
 const About = () => {
+	useEffect(() => {
+		document.title = 'Daniel Agbeni || About';
+	}, []);
 	const [scrollX, setScrollX] = useState(0);
 	const handleScrollX = (value) => {
 		setScrollX(scrollX + value);

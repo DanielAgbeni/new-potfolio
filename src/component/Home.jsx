@@ -23,6 +23,9 @@ import { FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 
 const Home = () => {
 	const location = useLocation();
+	useEffect(() => {
+		document.title = 'Daniel Agbeni';
+	}, []);
 	const backgroundStyle = {
 		backgroundImage: `url(${bc})`,
 	};

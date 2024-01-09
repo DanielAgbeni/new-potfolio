@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
 	FaChrome,
 	FaCode,
@@ -20,6 +20,9 @@ import {
 import { SiTailwindcss } from 'react-icons/si';
 
 const Sevices = () => {
+	useEffect(() => {
+		document.title = 'Daniel Agbeni || Services';
+	}, []);
 	return (
 		<div className=' text-white flex flex-col items-center justify-center gap-6 py-5 pb-10'>
 			<div className=' font-extrabold md:text-5xl text-3xl'>

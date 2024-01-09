@@ -1,10 +1,13 @@
 /** @format */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { works } from '../assets/projectData';
 import PotfolioCard from './PotfolioCard';
 
 const Potfolio = () => {
+	useEffect(() => {
+		document.title = 'Daniel Agbeni || Potfolio';
+	}, []);
 	return (
 		<div className=' h-full '>
 			<div className=' text-center font-extrabold text-5xl text-white mb-20'>
