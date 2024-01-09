@@ -102,4 +102,13 @@ export const works = [
 		mobileimg: pr011,
 		pcimg: pro12,
 	},
+	{
+		id: 10,
+		title: 'Danny Mart',
+		link: 'https://dannymart.netlify.app/',
+		githubLink: 'https://danielagbeni.netlify.app',
+		description: 'An online shoping application demo',
+		mobileimg: dannymartm,
+		pcimg: dannymartpc,
+	},
 ];

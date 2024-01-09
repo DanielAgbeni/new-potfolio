@@ -6,8 +6,8 @@ import { FaLink } from 'react-icons/fa';
 
 const PotfolioCard = ({ works }) => {
 	return (
-		<div className=' flex gap-5'>
-			<div className=' relative max-w-2xl h-fit rounded-xl overflow-hidden shadow-2xl bg-white bg-opacity-10 p-4  hover:scale-105 transition-all duration-200 ease-in-out '>
+		<div className=' flex gap-5 mx-3'>
+			<div className=' relative max-w-2xl h-fit rounded-xl overflow-hidden shadow-2xl bg-white bg-opacity-10 p-4 px-8  hover:scale-105 transition-all duration-200 ease-in-out md:mx-3 '>
 				<div className=' flex'>
 					<div>
 						<img
