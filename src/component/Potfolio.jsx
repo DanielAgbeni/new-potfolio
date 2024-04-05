@@ -10,7 +10,7 @@ const Potfolio = () => {
 	}, []);
 	return (
 		<div className=' h-full '>
-			<div className=' text-center font-extrabold text-5xl text-white mb-20'>
+			<div className=' text-center font-extrabold text-5xl text-white md:mt-2 mt-5 mb-20'>
 				Completed Project
 			</div>
 			<div className=' grid lg:grid-cols-3 gap-10 md:grid-cols-2 md:gap-2 items-center  justify-center mb-10 px-20 md:px-1'>

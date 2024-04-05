@@ -15,7 +15,7 @@ function App() {
 	};
 	return (
 		<div>
-			<div className='w-screen h-auto flex flex-auto bg-gradient-to-br from-red-800 via-gray-700 to-sky-400 '>
+			<div className='h-auto flex flex-auto bg-gradient-to-br from-red-800 via-gray-700 to-sky-400 '>
 				<Header />
 				<main className='mt-14 md:mt-20 px-6 py-4 w-full'>
 					<Routes>

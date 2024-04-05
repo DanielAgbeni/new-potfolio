@@ -13,6 +13,8 @@ import { MdClose, MdEmail, MdLocationCity, MdSend } from 'react-icons/md';
 import { motion } from 'framer-motion';
 
 const Contact = ({ click }) => {
+	const handleSubmit = (e) => {};
+
 	return (
 		<div className='absolute w-[90%] max-w-[800px] flex flex-col gap-3 p-10 -translate-x-1/2 backdrop-blur-xl bg-gradient-to-br from-gray-600 to-sky-600 bg-opacity-90  shadow-white top-20 rounded-md left-1/2'>
 			<div className='flex justify-end'>
@@ -23,7 +25,9 @@ const Contact = ({ click }) => {
 			<div className='flex flex-wrap justify-between gap-10'>
 				<div className='w-full sm:w-[40%] flex flex-col gap-4 '>
 					<h1 className='font-bold text-gray-200 text-sm'>Message me</h1>
-					<form className='flex flex-col gap-2'>
+					<form
+						className='flex flex-col gap-2'
+						onSubmit={handleSubmit}>
 						<div className='w-full relative flex flex-col'>
 							<div className='w-full order-2 relative h-auto'>
 								<input

@@ -2,19 +2,12 @@
 
 import React from 'react';
 import bg from './img/dan.jpg';
-import me from './img/pics.png';
 import TypingAnimation from './TypingAnimation';
-import {
-	FaDiscord,
-	FaGithub,
-	FaInstagram,
-	FaTwitter,
-	FaWhatsapp,
-	FaYoutube,
-} from 'react-icons/fa';
+import { FaGithub, FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import Social from './Social';
-import x from './img/x-twitter.svg';
+
 import bc from './img/bg.png';
+import newdp from '../assets/Daniel21.jpg';
 import { Link, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -41,7 +34,7 @@ const Home = () => {
 				data-aos='fade-up'>
 				<div className=' h-48 w-48 shadow-xl p-2 color-change rounded-full mx-auto relative mb-4'>
 					<img
-						src={bg}
+						src={newdp}
 						alt=''
 						className=' object-fit h-44 w-44 rounded-full'
 					/>
