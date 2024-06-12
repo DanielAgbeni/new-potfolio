@@ -1,6 +1,5 @@
 import React from 'react';
-import { FaGithub } from 'react-icons/fa6';
-import { FaLink } from 'react-icons/fa';
+import { FaGithub, FaLink } from 'react-icons/fa';
 
 const PotfolioCard = ({ works }) => {
 	return (
@@ -10,15 +9,17 @@ const PotfolioCard = ({ works }) => {
 					<div className='mr-4'>
 						<img
 							src={works.mobileimg}
-							alt=''
+							alt={`${works.title} mobile view`}
 							className='hover:scale-105 cursor-pointer transition-all duration-200 ease-in-out max-w-full'
+							loading='lazy'
 						/>
 					</div>
 					<div>
 						<img
 							src={works.pcimg}
-							alt=''
+							alt={`${works.title} desktop view`}
 							className='hover:scale-105 cursor-pointer transition-all duration-200 ease-in-out max-w-full'
+							loading='lazy'
 						/>
 					</div>
 				</div>
@@ -34,6 +35,7 @@ const PotfolioCard = ({ works }) => {
 					<a
 						href={works.githubLink}
 						target='_blank'
+						rel='noopener noreferrer'
 						className='p-3 m-3'>
 						<FaGithub className='text-3xl' />
 					</a>
