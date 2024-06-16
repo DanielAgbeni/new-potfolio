@@ -11,18 +11,42 @@ import {
 } from 'react-icons/fa';
 import { MdClose, MdEmail, MdLocationCity, MdSend } from 'react-icons/md';
 import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com';
 
 const Contact = ({ click }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const name = e.target.name.value;
-		const email = e.target.email.value;
-		const reason = e.target.reason.value;
-		const message = `Name: ${name}\nEmail: ${email}\nReason: ${reason}`;
-		const whatsappLink = `https://wa.me/message/CU3TXS5F4LYXA1?text=${encodeURIComponent(
-			message,
-		)}`;
-		window.location.href = whatsappLink;
+
+		const formData = new FormData(e.target);
+		const name = formData.get('name');
+		const email = formData.get('email');
+		const reason = formData.get('reason');
+		const message = formData.get('message');
+
+		const emailParams = {
+			from_name: name,
+			from_email: email,
+			to_name: 'Daniel Agbeni',
+			to_email: 'danielagbeni12@gmail.com',
+			subject: reason,
+			message: message,
+		};
+
+		emailjs
+			.send(
+				'service_ohy0qic', // Replace with your EmailJS service ID
+				'template_oaxbfp9', // Replace with your EmailJS template ID
+				emailParams,
+				'hzaDyArFvy49RaQAh', // Replace with your EmailJS user ID
+			)
+			.then(
+				(response) => {
+					alert('Message sent successfully!');
+				},
+				(error) => {
+					alert('Failed to send message, please try again.');
+				},
+			);
 	};
 
 	return (
