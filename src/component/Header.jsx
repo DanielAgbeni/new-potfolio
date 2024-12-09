@@ -70,7 +70,7 @@ const Header = () => {
 
 			{/* Mobile */}
 			<div className='flex md:hidden w-full h-full items-center justify-between'>
-				<p className='text-white font-bold text-xl'>Daniel Agbeni</p>
+				<p className='logo'>Daniel Agbeni</p>
 				<div
 					className='relative'
 					onClick={() => setIsMenuOpen(!isMenuOpen)}>

@@ -23,30 +23,14 @@ const Contact = ({ click }) => {
 		const reason = formData.get('reason');
 		const message = formData.get('message');
 
-		const emailParams = {
-			from_name: name,
-			from_email: email,
-			to_name: 'Daniel Agbeni',
-			to_email: 'danielagbeni12@gmail.com',
-			subject: reason,
-			message: message,
-		};
+		// Construct the WhatsApp message with the form data
+		const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AReason: ${reason}%0AMessage: ${message}`;
 
-		emailjs
-			.send(
-				'service_ohy0qic', // Replace with your EmailJS service ID
-				'template_oaxbfp9', // Replace with your EmailJS template ID
-				emailParams,
-				'hzaDyArFvy49RaQAh', // Replace with your EmailJS user ID
-			)
-			.then(
-				(response) => {
-					alert('Message sent successfully!');
-				},
-				(error) => {
-					alert('Failed to send message, please try again.');
-				},
-			);
+		// Create the WhatsApp link
+		const whatsappLink = `https://api.whatsapp.com/send?phone=2349041995875&text=${whatsappMessage}`;
+
+		// Redirect the user to WhatsApp with the pre-filled message
+		window.open(whatsappLink, '_blank');
 	};
 
 	return (

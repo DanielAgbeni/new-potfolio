@@ -10,7 +10,7 @@ const Potfolio = () => {
 	}, []);
 
 	return (
-		<div className='min-h-screen bg-black text-white py-10 rounded-md'>
+		<div className='min-h-screen bg-background text-primary-light py-10 rounded-md'>
 			<h1 className='text-center font-extrabold text-4xl md:text-5xl mt-5 mb-12'>
 				Completed Projects
 			</h1>

@@ -97,7 +97,7 @@ const Home = () => {
 							key={index}
 							href={link.href}
 							aria-label={`Visit my ${link.href}`}
-							className={`text-white text-4xl animate-bounce transition-transform transform hover:scale-110 hover:text-${link.color}`}>
+							className={`text-white text-4xl animate-bounce transition-transform transform hover:scale-110 hover:animate-pulse hover:text-${link.color}`}>
 							{link.icon}
 						</a>
 					))}
