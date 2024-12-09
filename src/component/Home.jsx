@@ -1,79 +1,118 @@
 /** @format */
 
-import React from 'react';
-import bg from './img/dan.jpg';
+import React, { useEffect } from 'react';
 import TypingAnimation from './TypingAnimation';
-import { FaGithub, FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
-import Social from './Social';
-
-import bc from './img/bg.png';
-import newdp from '../assets/Daniel21.jpg';
-import { Link, useLocation } from 'react-router-dom';
+import {
+	FaGithub,
+	FaInstagram,
+	FaWhatsapp,
+	FaYoutube,
+	FaLinkedinIn,
+	FaXTwitter,
+} from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
-import { FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
+import bc from './img/bg.png';
+import newdp from '../assets/Daniel21.jpg';
+import Social from './Social';
 
 const Home = () => {
-	const location = useLocation();
 	useEffect(() => {
 		document.title = 'Daniel Agbeni';
+		AOS.init({ duration: 1000, once: true });
 	}, []);
+
 	const backgroundStyle = {
 		backgroundImage: `url(${bc})`,
+		backgroundSize: 'cover',
+		backgroundPosition: 'center',
 	};
-	useEffect(() => {
-		AOS.init();
-	}, []);
+
+	const socialLinks = [
+		{
+			href: 'https://wa.me//+2349041995875',
+			icon: <FaWhatsapp />,
+			color: 'green-400',
+		},
+		{
+			href: 'https://www.youtube.com/@danielagbeni',
+			icon: <FaYoutube />,
+			color: 'red-700',
+		},
+		{
+			href: 'https://www.instagram.com/daniel_agbeni/',
+			icon: <FaInstagram />,
+			color: 'purple-500',
+		},
+		{
+			href: 'https://github.com/DanielAgbeni',
+			icon: <FaGithub />,
+			color: 'black',
+		},
+		{
+			href: 'https://twitter.com/Agbeni_Daniel',
+			icon: <FaXTwitter />,
+			color: 'black',
+		},
+		{
+			href: 'https://www.linkedin.com/in/daniel-agbeni-5461ab297/',
+			icon: <FaLinkedinIn />,
+			color: 'blue-600',
+		},
+	];
+
 	return (
 		<div
-			className='w-full h-screen flex flex-cols-1 justify-center items-center gap-2'
+			className='w-full h-screen flex items-center justify-center'
 			style={backgroundStyle}>
-			<div
-				className='grid grid-cols-1 items-center justify-center'
-				data-aos='fade-up'>
-				<div className=' h-48 w-48 shadow-xl p-2 color-change rounded-full mx-auto relative mb-4'>
+			<div className='text-center px-4'>
+				{/* Profile Image */}
+				<div
+					className='relative mx-auto mb-6 h-48 w-48 shadow-xl p-2 rounded-full color-change'
+					data-aos='fade-up'>
 					<img
 						src={newdp}
-						alt=''
-						className=' object-fit h-44 w-44 rounded-full'
+						alt='Daniel Agbeni'
+						className='h-44 w-44 object-cover rounded-full'
 					/>
 				</div>
-				<p className='text-gray-300 text-3xl sm:text-6xl font-extrabold flex items-center justify-center text-center glitch'>
-					Hy, I am Daniel Agbeni
+
+				{/* Title */}
+				<p className='text-gray-300 text-3xl sm:text-6xl font-extrabold glitch'>
+					Hi, I am Daniel Agbeni
 				</p>
-				<div className='text-3xl text-gray-200 flex items-center justify-center py-3 w-screen font-bold text-center'>
+
+				{/* Typing Animation */}
+				<div className='text-gray-200 text-2xl sm:text-3xl py-4'>
 					<TypingAnimation />
 				</div>
+
+				{/* Social Links with Bounce Animation */}
 				<div
-					className='flex items-center justify-center gap-4 py-3 '
-					data-aos='zoom-in-right'>
-					<a href='https://wa.me//+2349041995875'>
-						<FaWhatsapp className=' text-white text-4xl hover:scale-110 hover:text-green-400 cursor-pointer animate-bounce hover:animate-spin' />
-					</a>
-					<a href='https://www.youtube.com/@danielagbeni'>
-						<FaYoutube className=' text-white text-4xl hover:scale-110 hover:text-red-700 cursor-pointer animate-bounce hover:animate-spin' />
-					</a>
-					<a href='https://www.instagram.com/daniel_agbeni/'>
-						<FaInstagram className='text-white hover:text-purple-500 hover:scale-110 text-4xl cursor-pointer animate-bounce hover:animate-spin' />
-					</a>
-					<a href='https://github.com/DanielAgbeni'>
-						<FaGithub className=' text-white text-4xl hover:text-black hover:bg-white rounded-full animate-bounce hover:animate-spin hover:scale-110 cursor-pointer' />
-					</a>
-					<a href='https://twitter.com/Agbeni_Daniel'>
-						<FaXTwitter className='text-white text-4xl hover:text-black hover:scale-110 cursor-pointer animate-bounce hover:animate-spin' />
-					</a>
-					<a href='https://www.linkedin.com/in/daniel-agbeni-5461ab297/'>
-						<FaLinkedinIn className='text-white text-4xl hover:text-blue-600 hover:scale-110 cursor-pointer animate-bounce hover:animate-spin' />
-					</a>
+					className='flex justify-center gap-6 py-4 flex-wrap'
+					data-aos='zoom-in'>
+					{socialLinks.map((link, index) => (
+						<a
+							key={index}
+							href={link.href}
+							aria-label={`Visit my ${link.href}`}
+							className={`text-white text-4xl animate-bounce transition-transform transform hover:scale-110 hover:text-${link.color}`}>
+							{link.icon}
+						</a>
+					))}
 				</div>
-				<div className='flex items-center justify-center mt-4 relative'>
-					<Link to={'/about'}>
-						<button className='border border-white text-2xl py-1 px-2 bg-sky-900 text-white hover:bg-white hover:text-sky-900 font-bold hover:rounded hover:border-black hover:border'>
-							Who am I ?
+
+				{/* About Button */}
+				<div className='mt-6'>
+					<Link to='/about'>
+						<button className='text-xl font-bold text-white bg-blue-600 hover:bg-white hover:text-blue-600 border border-white hover:border-blue-600 rounded-full px-6 py-2 transition-all duration-300'>
+							Who am I?
 						</button>
 					</Link>
 				</div>
+
+				{/* Additional Social Section */}
 				<Social />
 			</div>
 		</div>

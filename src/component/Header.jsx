@@ -7,136 +7,95 @@ import Contact from './Contact';
 import { FaPhone } from 'react-icons/fa6';
 
 const Header = () => {
-	const [isMenu, setIsMenu] = useState(false);
-	const [contact, setContact] = useState(false);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isContactOpen, setIsContactOpen] = useState(false);
 	const location = useLocation();
 	const menuRef = useRef(null);
 
 	useEffect(() => {
 		const handleClickOutside = (event) => {
 			if (menuRef.current && !menuRef.current.contains(event.target)) {
-				setIsMenu(false);
+				setIsMenuOpen(false);
 			}
 		};
-
 		document.addEventListener('mousedown', handleClickOutside);
-
 		return () => {
 			document.removeEventListener('mousedown', handleClickOutside);
 		};
 	}, []);
 
-	return (
-		<header className='fixed z-50 w-screen h-20 p-3 px-4 md:p-4 md:px-16 bg-gradient-to-br from-red-800 via-gray-700 to-sky-400 drop-shadow-xl'>
-			{/* Desktop */}
-			<div className='hidden md:flex w-full h-full items-center justify-between shadow-white'>
-				<p className='logo'>Daniel Agbeni</p>
-				<div className='flex items-center gap-8'>
-					<ul className='flex item-center gap-8 ml-auto'>
-						<Link to={'/'}>
-							<li
-								className={`cursor-pointer  hover:text-white text-${
-									location.pathname === '/' ? 'white' : 'gray-400'
-								} duration-100 transition-all ease-in-out text-xl font-semibold`}
-								onClick={() => setContact(false)}>
-								Home
-							</li>
-						</Link>
-						<Link to={'/about'}>
-							<li
-								className={`cursor-pointer  hover:text-white text-${
-									location.pathname === '/about' ? 'white' : 'gray-400'
-								}  duration-100 transition-all ease-in-out text-xl font-semibold`}
-								onClick={() => setContact(false)}>
-								About
-							</li>
-						</Link>
-						<Link to={'/service'}>
-							<li
-								className={`cursor-pointer  hover:text-white text-${
-									location.pathname === '/service' ? 'white' : 'gray-400'
-								}  duration-100 transition-all ease-in-out text-xl font-semibold`}
-								onClick={() => setContact(false)}>
-								Service
-							</li>
-						</Link>
-						<Link to={'/potfolio'}>
-							<li
-								className={`cursor-pointer  hover:text-white text-${
-									location.pathname === '/potfolio' ? 'white' : 'gray-400'
-								}  duration-100 transition-all ease-in-out text-xl font-semibold `}
-								onClick={() => setContact(false)}>
-								Potfolio
-							</li>
-						</Link>
+	const navLinks = [
+		{ name: 'Home', path: '/' },
+		{ name: 'About', path: '/about' },
+		{ name: 'Service', path: '/service' },
+		{ name: 'Portfolio', path: '/portfolio' },
+	];
 
-						<li
-							className='cursor-pointer  hover:text-white text-gray-400  duration-100 transition-all ease-in-out text-xl font-semibold flex items-center justify-center rounded-full py-3 px-6 bg-blue-600 hover:bg-blue-400'
-							onClick={() => setContact(!contact)}>
-							<FaPhone />
-						</li>
-					</ul>
-				</div>
-				{contact ? <Contact click={setContact} /> : ''}
-			</div>
-			{/* Mobile */}
-			<div className='flex items-center justify-between md:hidden w-full h-full'>
+	const renderLinks = (isMobile = false) =>
+		navLinks.map((link) => (
+			<Link
+				to={link.path}
+				key={link.name}>
+				<li
+					className={`cursor-pointer ${
+						location.pathname === link.path ? 'text-white' : 'text-gray-400'
+					} ${
+						isMobile
+							? 'font-semibold hover:bg-gray-600 px-4 py-2 rounded-lg'
+							: 'font-semibold hover:text-white'
+					} transition-all duration-300 text-xl`}
+					onClick={() =>
+						isMobile ? setIsMenuOpen(false) : setIsContactOpen(false)
+					}>
+					{link.name}
+				</li>
+			</Link>
+		));
+
+	return (
+		<header className='fixed z-50 w-full h-20 px-4 md:px-16 bg-gradient-to-br from-red-800 via-gray-700 to-sky-400 shadow-lg'>
+			{/* Desktop */}
+			<div className='hidden md:flex w-full h-full items-center justify-between'>
 				<p className='logo'>Daniel Agbeni</p>
+				<ul className='flex items-center gap-8'>{renderLinks()}</ul>
+				<button
+					className='flex items-center gap-2 bg-blue-600 hover:bg-blue-400 text-white font-semibold px-6 py-3 rounded-full transition-all'
+					onClick={() => setIsContactOpen(!isContactOpen)}
+					aria-label='Contact Us'>
+					<FaPhone />
+					<span>Contact</span>
+				</button>
+				{isContactOpen && <Contact click={setIsContactOpen} />}
+			</div>
+
+			{/* Mobile */}
+			<div className='flex md:hidden w-full h-full items-center justify-between'>
+				<p className='text-white font-bold text-xl'>Daniel Agbeni</p>
 				<div
 					className='relative'
-					onClick={() => setIsMenu(!isMenu)}>
-					{isMenu ? (
-						<MdClose className='text-3xl font-extrabold text-red-600 duration-500' />
+					onClick={() => setIsMenuOpen(!isMenuOpen)}>
+					{isMenuOpen ? (
+						<MdClose className='text-3xl text-red-600 cursor-pointer' />
 					) : (
-						<MdMenu className='text-3xl font-bold text-gray-400 duration-500' />
+						<MdMenu className='text-3xl text-gray-400 cursor-pointer' />
 					)}
-
-					{isMenu && (
+					{isMenuOpen && (
 						<div
 							ref={menuRef}
-							className='w-64 bg-gray-800 shadow-xl rounded-lg flex flex-col absolute top-12 right-0 py-3 px-3 z-50'>
-							<ul className='flex flex-col gap-1'>
-								<Link to={'/'}>
-									<li
-										className='cursor-pointer font-extrabold hover:bg-gray-600 text-white duration-500 rounded-lg transition-all ease-in-out px-4 py-2'
-										onClick={() => setIsMenu(false)}>
-										Home
-									</li>
-								</Link>
-								<Link to={'/about'}>
-									<li
-										className='cursor-pointer font-extrabold hover:bg-gray-600 text-white duration-500 rounded-lg transition-all ease-in-out px-4 py-2'
-										onClick={() => setIsMenu(false)}>
-										About
-									</li>
-								</Link>
-								<Link to={'/service'}>
-									<li
-										className='cursor-pointer font-extrabold hover:bg-gray-600 text-white duration-500 rounded-lg transition-all ease-in-out px-4 py-2'
-										onClick={() => setIsMenu(false)}>
-										Service
-									</li>
-								</Link>
-								<Link to={'/potfolio'}>
-									<li
-										className='cursor-pointer font-extrabold hover:bg-gray-600 text-white duration-500 rounded-lg transition-all ease-in-out px-4 py-2'
-										onClick={() => setIsMenu(false)}>
-										Potfolio
-									</li>
-								</Link>
-								<li
-									className='cursor-pointer font-extrabold hover:bg-gray-600 text-white duration-500 rounded-lg transition-all ease-in-out px-4 py-2'
-									onClick={() => {
-										setIsMenu(false);
-										setContact(!contact);
-									}}>
-									Contact
-								</li>
-							</ul>
+							className='absolute top-12 right-0 w-64 bg-gray-800 rounded-lg shadow-lg z-50 py-3'>
+							<ul className='flex flex-col gap-2'>{renderLinks(true)}</ul>
+							<li
+								className='cursor-pointer font-semibold hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-all duration-300'
+								onClick={() => {
+									setIsMenuOpen(false);
+									setIsContactOpen(!isContactOpen);
+								}}>
+								Contact
+							</li>
 						</div>
 					)}
 				</div>
-				{contact ? <Contact click={setContact} /> : ''}
+				{isContactOpen && <Contact click={setIsContactOpen} />}
 			</div>
 		</header>
 	);

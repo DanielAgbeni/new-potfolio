@@ -6,18 +6,21 @@ import PotfolioCard from './PotfolioCard';
 
 const Potfolio = () => {
 	useEffect(() => {
-		document.title = 'Daniel Agbeni || Potfolio';
+		document.title = 'Daniel Agbeni || Portfolio';
 	}, []);
+
 	return (
-		<div className=' h-full '>
-			<div className=' text-center font-extrabold text-5xl text-white md:mt-2 mt-5 mb-20'>
-				Completed Project
-			</div>
-			<div className=' grid lg:grid-cols-3 gap-10 md:grid-cols-2 md:gap-2 items-center  justify-center mb-10 px-20 md:px-1'>
-				{works.map((items) => (
+		<div className='min-h-screen bg-black text-white py-10 rounded-md'>
+			<h1 className='text-center font-extrabold text-4xl md:text-5xl mt-5 mb-12'>
+				Completed Projects
+			</h1>
+
+			{/* Projects Grid */}
+			<div className='grid gap-10 md:grid-cols-2 lg:grid-cols-3 px-6 md:px-12'>
+				{works.map((project) => (
 					<PotfolioCard
-						key={items.id}
-						works={items}
+						key={project.id}
+						works={project}
 					/>
 				))}
 			</div>

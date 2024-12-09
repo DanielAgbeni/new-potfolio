@@ -43,7 +43,6 @@ body {
 }
 
 @keyframes blink-animation {
-
 	0%,
 	100% {
 		opacity: 1;
@@ -84,30 +83,30 @@ body {
 }
 
 @keyframes colorChange {
-	1% {
-		background-color: rgb(153, 27, 27);
+	0% {
+		background-color: #3b82f6; /* Soft Blue */
 	}
 
 	25% {
-		background-color: gray;
+		background-color: #22c55e; /* Soft Green */
 	}
 
 	50% {
-		background-color: rgb(203, 131, 195);
+		background-color: #f59e0b; /* Warm Yellow */
 	}
 
 	75% {
-		background-color: #38bdf8;
+		background-color: #ec4899; /* Bright Pink */
 	}
 
 	100% {
-		background-color: rgb(145, 88, 231);
+		background-color: #8b5cf6; /* Soft Purple */
 	}
 }
 
 .color-change {
-	background-color: rgb(145, 88, 231);
-	animation: colorChange 4s infinite ease-in-out;
+	background-color: #8b5cf6; /* Initial color matching the animation */
+	animation: colorChange 6s infinite cubic-bezier(0.42, 0, 0.58, 1); /* Smooth transition with easing */
 }
 
 ::-webkit-scrollbar {
@@ -128,7 +127,7 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: #804BF2;
+	background: #804bf2;
 }
 
 .glitch::before {

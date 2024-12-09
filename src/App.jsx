@@ -32,7 +32,7 @@ function App() {
 							element={<Sevices />}
 						/>
 						<Route
-							path='/potfolio'
+							path='/portfolio'
 							element={<Potfolio />}
 						/>
 						<Route
