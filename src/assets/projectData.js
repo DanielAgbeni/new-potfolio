@@ -18,26 +18,49 @@ import pro9 from '../assets/taskm.png';
 import pro10 from '../assets/taskpc.png';
 import pr011 from '../assets/weatherm.png';
 import pro12 from '../assets/weatherpc.png';
+import bclm from '../assets/bcl.png';
+import bclp from '../assets/PCbcl.png';
+import btechm from '../assets/btechm.png';
+import btechpc from '../assets/barrytechpc.gif';
 
 export const works = [
 	{
-		id: 1,
-		title: 'New Potfolio Website',
-		link: 'https://danielagbeni.netlify.app',
+		id: 11,
+		title: 'Baoba Company Limited',
+		link: 'https://www.baobacompanylimited.com/',
 		githubLink: 'https://danielagbeni.netlify.app',
-		description: 'My Potfolio website',
-		mobileimg: PWm,
-		pcimg: PWpc,
+		description: 'Official website for Baoba Company Limited',
+		mobileimg: bclm,
+		pcimg: bclp,
+	},
+	{
+		id: 12,
+		title: 'Secure Advance Information',
+		link: 'https://barry-tech.vercel.app/',
+		githubLink: 'https://danielagbeni.netlify.app',
+		description: 'Official Website for Secure Advance Information',
+		mobileimg: btechm,
+		pcimg: btechpc,
 	},
 	{
 		id: 2,
 		title: 'HiMe',
 		link: 'https://himechat.netlify.app',
 		githubLink: 'https://danielagbeni.netlify.app',
-		description: 'Demo of a chat application',
+		description: 'HiMe Chat application \n A chat application for everyone',
 		mobileimg: himem,
 		pcimg: himepc,
 	},
+	{
+		id: 1,
+		title: 'My Potfolio Website',
+		link: 'https://danielagbeni.netlify.app',
+		githubLink: 'https://danielagbeni.netlify.app',
+		description: 'My Potfolio website',
+		mobileimg: PWm,
+		pcimg: PWpc,
+	},
+
 	// {
 	// 	id: 3,
 	// 	title: 'Trippy',
