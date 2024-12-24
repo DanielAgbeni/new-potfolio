@@ -82,31 +82,31 @@ body {
 	padding: 5px;
 }
 
-@keyframes colorChange {
+@keyframes gradientRotation {
 	0% {
-		background-color: #3b82f6; /* Soft Blue */
+		background: linear-gradient(to right, #991b1b, #374151, #0ea5e9);
+		background-position: 0% 50%;
 	}
-
 	25% {
-		background-color: #22c55e; /* Soft Green */
+		background: linear-gradient(to right, #374151, #0ea5e9, #991b1b);
+		background-position: 50% 100%;
 	}
-
 	50% {
-		background-color: #f59e0b; /* Warm Yellow */
+		background: linear-gradient(to right, #0ea5e9, #991b1b, #374151);
+		background-position: 100% 50%;
 	}
-
 	75% {
-		background-color: #ec4899; /* Bright Pink */
+		background: linear-gradient(to right, #991b1b, #0ea5e9, #374151);
+		background-position: 50% 0%;
 	}
-
 	100% {
-		background-color: #8b5cf6; /* Soft Purple */
+		background: linear-gradient(to right, #374151, #991b1b, #0ea5e9);
+		background-position: 0% 50%;
 	}
 }
 
 .color-change {
-	background-color: #8b5cf6; /* Initial color matching the animation */
-	animation: colorChange 6s infinite cubic-bezier(0.42, 0, 0.58, 1); /* Smooth transition with easing */
+	animation: gradientRotation 10s infinite cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 ::-webkit-scrollbar {
