@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import bc from './img/bg.png';
-import newdp from '../assets/Daniel21.jpg';
+import newdp from '/Daniel Agbeni.jpg';
 import Social from './Social';
 
 const Home = () => {
