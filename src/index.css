@@ -84,31 +84,21 @@ body {
 
 @keyframes gradientRotation {
 	0% {
-		background: linear-gradient(to right, #991b1b, #374151, #0ea5e9);
 		background-position: 0% 50%;
 	}
-	25% {
-		background: linear-gradient(to right, #374151, #0ea5e9, #991b1b);
-		background-position: 50% 100%;
-	}
 	50% {
-		background: linear-gradient(to right, #0ea5e9, #991b1b, #374151);
 		background-position: 100% 50%;
 	}
-	75% {
-		background: linear-gradient(to right, #991b1b, #0ea5e9, #374151);
-		background-position: 50% 0%;
-	}
 	100% {
-		background: linear-gradient(to right, #374151, #991b1b, #0ea5e9);
 		background-position: 0% 50%;
 	}
 }
 
 .color-change {
-	animation: gradientRotation 10s infinite cubic-bezier(0.42, 0, 0.58, 1);
+	background: linear-gradient(to right, #991b1b, #374151, #0ea5e9, #991b1b);
+	background-size: 200% 100%;
+	animation: gradientRotation 10s infinite linear;
 }
-
 ::-webkit-scrollbar {
 	width: 5px;
 	height: 5px;
