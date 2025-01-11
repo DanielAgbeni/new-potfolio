@@ -4,7 +4,23 @@ import React, { useState, useEffect } from 'react';
 import '../index.css';
 
 const TypingAnimation = () => {
-	const phrases = ['Web Developer', 'Computer Scientist', 'Youtuber'];
+	const phrases = [
+		'Web Developer',
+		'Computer Scientist',
+		'Youtuber',
+		'Fast Learner',
+		'Tech Enthusiast',
+		'Creative Thinker',
+		'Problem Solver',
+		'Open-Source Contributor',
+		'Innovator',
+		'Lifelong Learner',
+		'React Developer',
+		// 'UI/UX Designer',
+		'AI Explorer',
+		'Passionate Coder',
+		'Software Engineer',
+	];
 	const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
 	const [currentPhrase, setCurrentPhrase] = useState('');
 	const [isTyping, setIsTyping] = useState(true);
@@ -44,7 +60,7 @@ const TypingAnimation = () => {
 
 	return (
 		<div>
-			<p>
+			<p className='text-xl font-bold'>
 				a {currentPhrase}
 				{showCursor ? <span className='cursor'></span> : null}
 			</p>

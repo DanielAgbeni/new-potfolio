@@ -39,15 +39,19 @@ body {
 
 /* Body */
 .cursor {
-	animation: blink-animation 1s infinite;
+	display: inline-block;
+	width: 2px;
+	height: 1.2em;
+	background-color: currentColor;
+	vertical-align: middle;
+	animation: blink 0.7s steps(2, start) infinite;
 }
 
-@keyframes blink-animation {
+@keyframes blink {
 	0%,
 	100% {
 		opacity: 1;
 	}
-
 	50% {
 		opacity: 0;
 	}
