@@ -16,6 +16,16 @@ import { MdWork, MdWorkHistory } from 'react-icons/md';
 import { SiTailwindcss } from 'react-icons/si';
 import { IoLogoJavascript } from 'react-icons/io5';
 import AOS from 'aos';
+import {
+	SiMongodb,
+	SiGooglecloud,
+	SiMicrosoftazure,
+	SiDocker,
+	SiKubernetes,
+	SiTypescript,
+	SiPostgresql,
+} from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
 import cv from '../assets/Daniel Agbeni New CV.pdf';
 
 const About = () => {
@@ -52,7 +62,7 @@ const About = () => {
 	);
 
 	return (
-		<div className='min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white py-12 px-4 sm:px-6 lg:px-8'>
+		<div className='min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white py-12 px-4 sm:px-6 lg:px-8 rounded-md'>
 			<div className='max-w-7xl mx-auto'>
 				{/* Header Section */}
 				<div className='text-center mb-12'>
@@ -126,6 +136,46 @@ const About = () => {
 							color='text-blue-400'
 							title='Tailwind CSS'
 						/>
+						<TechnologyIcon
+							Icon={SiMongodb}
+							color='text-green-600'
+							title='MongoDB'
+						/>
+						<TechnologyIcon
+							Icon={FaAws}
+							color='text-orange-400'
+							title='AWS'
+						/>
+						<TechnologyIcon
+							Icon={SiGooglecloud}
+							color='text-blue-500'
+							title='Google Cloud'
+						/>
+						{/* <TechnologyIcon
+							Icon={SiMicrosoftazure}
+							color='text-blue-600'
+							title='Azure'
+						/> */}
+						<TechnologyIcon
+							Icon={SiDocker}
+							color='text-sky-500'
+							title='Docker'
+						/>
+						<TechnologyIcon
+							Icon={SiKubernetes}
+							color='text-blue-600'
+							title='Kubernetes'
+						/>
+						<TechnologyIcon
+							Icon={SiTypescript}
+							color='text-blue-500'
+							title='TypeScript'
+						/>
+						{/* <TechnologyIcon
+							Icon={SiPostgresql}
+							color='text-blue-400'
+							title='PostgreSQL'
+						/> */}
 					</div>
 				</div>
 

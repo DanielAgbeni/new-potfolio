@@ -12,6 +12,7 @@ import {
 import { MdClose, MdEmail, MdLocationCity, MdSend } from 'react-icons/md';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Contact = ({ click }) => {
 	const handleSubmit = (e) => {
@@ -134,7 +135,7 @@ const Contact = ({ click }) => {
 								target='_blank'
 								rel='noreferrer'
 								className='inline-flex hover:scale-110 duration-300 hover:text-white'>
-								<FaTwitter className=' w-7 h-7' />
+								<FaXTwitter className=' w-7 h-7' />
 							</a>
 						</li>
 						<li className='text-lg md:text-xl'>
