@@ -1,6 +1,4 @@
-/** @format */
-
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import TypingAnimation from './TypingAnimation';
 import {
 	FaGithub,
@@ -18,6 +16,8 @@ import newdp from '/Daniel Agbeni.jpg';
 import Social from './Social';
 
 const Home = () => {
+	const [isPreviewVisible, setPreviewVisible] = useState(false);
+
 	useEffect(() => {
 		document.title = 'Daniel Agbeni';
 		AOS.init({ duration: 1000, once: true });
@@ -74,7 +74,8 @@ const Home = () => {
 					<img
 						src={newdp}
 						alt='Daniel Agbeni'
-						className='h-44 w-44 object-cover rounded-full'
+						className='h-44 w-44 object-cover rounded-full cursor-pointer'
+						onClick={() => setPreviewVisible(true)}
 					/>
 				</div>
 
@@ -114,6 +115,21 @@ const Home = () => {
 
 				{/* Additional Social Section */}
 				<Social />
+
+				{/* Image Preview Modal */}
+				{isPreviewVisible && (
+					<div
+						className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm'
+						onClick={() => setPreviewVisible(false)}>
+						<div className='relative'>
+							<img
+								src={newdp}
+								alt='Daniel Agbeni'
+								className='max-w-full max-h-full rounded-lg shadow-2xl'
+							/>
+						</div>
+					</div>
+				)}
 			</div>
 		</div>
 	);
