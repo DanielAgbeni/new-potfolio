@@ -122,7 +122,7 @@ const Home = () => {
 						className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm'
 						onClick={() => setPreviewVisible(false)}>
 						<div
-							className='relative max-w-[90%] max-h-[90%] rounded-lg shadow-2xl'
+							className='relative p-4 bg-white rounded-lg shadow-2xl'
 							onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking on the image
 						>
 							<button
@@ -133,7 +133,13 @@ const Home = () => {
 							<img
 								src={newdp}
 								alt='Daniel Agbeni'
-								className='w-full h-auto max-h-full rounded-lg'
+								className='rounded-lg'
+								style={{
+									width: 'auto',
+									height: 'auto',
+									maxWidth: '500px', // Set maximum width
+									maxHeight: '400px', // Set maximum height
+								}}
 							/>
 						</div>
 					</div>
