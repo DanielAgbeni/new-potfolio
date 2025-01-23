@@ -119,13 +119,21 @@ const Home = () => {
 				{/* Image Preview Modal */}
 				{isPreviewVisible && (
 					<div
-						className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm'
+						className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm'
 						onClick={() => setPreviewVisible(false)}>
-						<div className='relative'>
+						<div
+							className='relative max-w-[90%] max-h-[90%] rounded-lg shadow-2xl'
+							onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking on the image
+						>
+							<button
+								className='absolute top-2 right-2 bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-red-700 focus:outline-none'
+								onClick={() => setPreviewVisible(false)}>
+								&times;
+							</button>
 							<img
 								src={newdp}
 								alt='Daniel Agbeni'
-								className='max-w-full max-h-full rounded-lg shadow-2xl'
+								className='w-full h-auto max-h-full rounded-lg'
 							/>
 						</div>
 					</div>
