@@ -22,8 +22,19 @@ import bclm from '../assets/bcl.png';
 import bclp from '../assets/PCbcl.png';
 import btechm from '../assets/btechm.png';
 import btechpc from '../assets/barrytechpc.gif';
+import UploadPC from '../assets/uploadPC.png'
+import UploadMobile from '../assets/uploadmobile.png'
 
 export const works = [
+		{
+		id: 13,
+		title: 'UploadDoc',
+		link: 'https://uploaddoc.vercel.app',
+		githubLink: 'https://github.com/DanielAgbeni',
+		description: 'Streamline Your Document Printing: A platform for document printing',
+		mobileimg: UploadMobile,
+		pcimg: UploadPC,
+	},
 	{
 		id: 11,
 		title: 'Baoba Company Limited',
