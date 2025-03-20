@@ -26,7 +26,7 @@ import {
 	SiPostgresql,
 } from 'react-icons/si';
 import { FaAws } from 'react-icons/fa';
-import cv from '../assets/Daniel Agbeni New CV.pdf';
+import cv from '../assets/Agbeni Daniel Oluwafemi - CV.pdf';
 
 const About = () => {
 	useEffect(() => {
@@ -151,11 +151,6 @@ const About = () => {
 							color='text-blue-500'
 							title='Google Cloud'
 						/>
-						{/* <TechnologyIcon
-							Icon={SiMicrosoftazure}
-							color='text-blue-600'
-							title='Azure'
-						/> */}
 						<TechnologyIcon
 							Icon={SiDocker}
 							color='text-sky-500'
@@ -171,11 +166,6 @@ const About = () => {
 							color='text-blue-500'
 							title='TypeScript'
 						/>
-						{/* <TechnologyIcon
-							Icon={SiPostgresql}
-							color='text-blue-400'
-							title='PostgreSQL'
-						/> */}
 					</div>
 				</div>
 
@@ -189,7 +179,8 @@ const About = () => {
 							{[
 								{
 									label: 'Frontend Development',
-									value: 'HTML, CSS, JavaScript, React JS, Responsive Design',
+									value:
+										'HTML, CSS, JavaScript, React JS, TypeScript, Responsive Design',
 								},
 								{
 									label: 'Computer Hardware',
@@ -197,17 +188,17 @@ const About = () => {
 								},
 								{
 									label: 'Media Production',
-									value: 'Audio-Visual Equipment, Live Streaming',
+									value: 'Audio-Visual Equipment Operation, Live Streaming',
 								},
 								{
 									label: 'Soft Skills',
 									value:
-										'Effective Communication, Teamwork, Critical Thinking, Innovation',
+										'Effective Communication, Teamwork, Critical Thinking, Innovation, Leadership',
 								},
 								{
 									label: 'Teaching',
 									value:
-										'Curriculum Development, Mentoring, Technical Instruction',
+										'Curriculum Development, Student Mentoring, Technical Instruction',
 								},
 							].map((skill, index) => (
 								<li
@@ -229,16 +220,30 @@ const About = () => {
 								{
 									title: 'Computer Trainer and Coding Instructor',
 									company: 'Barry Tech',
-									period: 'September 2023 – Present',
+									period: 'September 2024 – January 2025',
 									description:
-										'Developed and delivered web development curriculum focused on React JS and mentored students.',
+										'Led the development and delivery of a web development curriculum focused on React JS, mentoring over 50 students.',
 								},
 								{
 									title: 'Coding Instructor',
 									company: 'Swebs Coding Institute',
-									period: 'March 2023 – August 2023',
+									period: 'March 2024 – August 2024',
 									description:
-										'Taught JavaScript fundamentals and React JS, guiding students through hands-on projects.',
+										'Taught JavaScript and React JS, achieving a 90% student success rate through hands-on projects.',
+								},
+								{
+									title: 'Control Room Operator (SIWES)',
+									company: 'Dux FM 94.7',
+									period: 'November 2022 – March 2023',
+									description:
+										'Managed control room equipment for live radio broadcasts, ensuring seamless transmission.',
+								},
+								{
+									title: 'Church Media Technician (Voluntary)',
+									company: 'Christian Ministry of Reconciliation (CMR)',
+									period: '2016 – Present',
+									description:
+										'Led technical support for media services and expanded live streaming capabilities.',
 								},
 							].map((exp, index) => (
 								<li
@@ -261,19 +266,20 @@ const About = () => {
 						<ul className='space-y-4 text-gray-300'>
 							{[
 								{
-									degree: 'ND Computer Science',
+									degree:
+										'Higher National Diploma (HND) in Computer Science (Ongoing)',
+									institution: 'Federal Polytechnic Ado-Ekiti',
+									period: '2024 – Present',
+								},
+								{
+									degree: 'National Diploma (ND) in Computer Science',
 									institution: 'Federal Polytechnic Ado-Ekiti',
 									period: '2021 – 2023',
 								},
 								{
-									degree: 'Computer Repairs',
-									institution: 'Webzone Technologies',
-									period: '2021',
-								},
-								{
 									degree: 'WASSCE & NECO',
 									institution: 'River of Life Royal School',
-									period: '2020',
+									period: '2014 – 2020',
 								},
 							].map((edu, index) => (
 								<li
