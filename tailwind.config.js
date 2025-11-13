@@ -1,69 +1,86 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+module.exports = {
+	content: [
+		'./app/**/*.{js,ts,jsx,tsx,mdx}',
+		'./components/**/*.{js,ts,jsx,tsx,mdx}',
+	],
 	theme: {
 		extend: {
-			width: {
-				150: '150px',
-				190: '190px',
-				225: '225px',
-				275: '275px',
-				300: '300px',
-				340: '340px',
-				350: '350px',
-				375: '375px',
-				460: '460px',
-				656: '656px',
-				880: '880px',
-				508: '508px',
-			},
-			height: {
-				80: '80px',
-				150: '150px',
-				225: '225px',
-				300: '300px',
-				340: '340px',
-				370: '370px',
-				420: '420px',
-				510: '510px',
-				600: '600px',
-				650: '650px',
-				685: '685px',
-				800: '800px',
-				'90vh': '90vh',
-			},
-			minWidth: {
-				210: '210px',
-				350: '350px',
-				620: '620px',
-			},
-			screens: {
-				sm: '640px',
-				md: '768px',
-				lg: '1024px',
-				xl: '1280px',
-				'2xl': '1536px',
-			},
-			backgroundImage: {
-				hero: 'url(../src/component/img/bg.png)',
-			},
 			colors: {
+				// Sleek black-based color palette
 				primary: {
-					DEFAULT: '#1a365d', // dark blue
-					light: '#2c5282', // medium blue
+					DEFAULT: '#00ff88', // Neon green accent
+					dark: '#00cc6e',
+					light: '#33ffaa',
 				},
 				secondary: {
-					DEFAULT: '#c53030', // red
-					light: '#e53e3e', // light red
+					DEFAULT: '#00d4ff', // Cyan accent
+					dark: '#00a8cc',
+					light: '#33ddff',
 				},
 				accent: {
-					DEFAULT: '#2d3748', // dark gray
-					light: '#4a5568', // light gray
+					DEFAULT: '#ff00ff', // Magenta accent
+					dark: '#cc00cc',
+					light: '#ff33ff',
 				},
-				background: {
-					DEFAULT: '#1a202c', // dark background
-					light: '#2d3748', // lighter background
+				dark: {
+					100: '#0a0a0a', // Darkest black
+					200: '#0f0f0f', // Very dark
+					300: '#1a1a1a', // Dark
+					400: '#242424', // Medium dark
+					500: '#2e2e2e', // Medium
+					600: '#383838', // Light medium
+					700: '#424242', // Lighter
+					800: '#4d4d4d', // Even lighter
+					900: '#575757', // Lightest dark
 				},
+			},
+			fontFamily: {
+				mono: ['JetBrains Mono', 'monospace'],
+				sans: ['Inter', 'sans-serif'],
+			},
+			animation: {
+				'gradient': 'gradient 8s linear infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				'float': 'float 3s ease-in-out infinite',
+				'slide-up': 'slideUp 0.5s ease-out',
+				'slide-down': 'slideDown 0.5s ease-out',
+			},
+			keyframes: {
+				gradient: {
+					'0%, 100%': {
+						'background-size': '200% 200%',
+						'background-position': 'left center'
+					},
+					'50%': {
+						'background-size': '200% 200%',
+						'background-position': 'right center'
+					},
+				},
+				glow: {
+					'from': {
+						'box-shadow': '0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #00ff88',
+					},
+					'to': {
+						'box-shadow': '0 0 20px #00ff88, 0 0 30px #00ff88, 0 0 40px #00ff88',
+					},
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-20px)' },
+				},
+				slideUp: {
+					'from': { transform: 'translateY(100%)', opacity: '0' },
+					'to': { transform: 'translateY(0)', opacity: '1' },
+				},
+				slideDown: {
+					'from': { transform: 'translateY(-100%)', opacity: '0' },
+					'to': { transform: 'translateY(0)', opacity: '1' },
+				},
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'grid-pattern': 'linear-gradient(to right, #1a1a1a 1px, transparent 1px), linear-gradient(to bottom, #1a1a1a 1px, transparent 1px)',
 			},
 		},
 	},
