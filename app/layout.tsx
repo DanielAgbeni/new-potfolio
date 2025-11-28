@@ -5,11 +5,14 @@ import Footer from '@/components/Footer';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-	title: 'Daniel Agbeni | Full Stack Developer & Cloud Engineer',
+	title: 'Daniel Agbeni',
 	description:
-		'Frontend Developer (React, Next.js), Backend Developer (Node.js, Express, MongoDB), and Cloud Engineer specializing in deployment, scalability, and infrastructure. Building modern web applications with cutting-edge technologies.',
+		'I am Daniel Agbeni Oluwafemi, a skilled Full Stack Developer and Cloud Engineer. I specialize in creating scalable web solutions with modern technologies.',
 	keywords: [
 		'Daniel Agbeni',
+		'Daniel Agbeni Oluwafemi',
+		'Founder of UploadDoc',
+		'UploadDoc',
 		'Full Stack Developer',
 		'Frontend Developer',
 		'Backend Developer',
@@ -32,17 +35,17 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: 'website',
 		locale: 'en_US',
-		url: 'https://danielagbeni.vercel.app',
-		title: 'Daniel Agbeni | Full Stack Developer & Cloud Engineer',
+		url: 'https://danielagbeni.uploaddoc.app',
+		title: 'Daniel Agbeni',
 		description:
-			'Frontend Developer (React, Next.js), Backend Developer (Node.js, Express, MongoDB), and Cloud Engineer specializing in deployment, scalability, and infrastructure.',
+			'I am Daniel Agbeni Oluwafemi, a skilled Full Stack Developer and Cloud Engineer. I specialize in creating scalable web solutions with modern technologies.',
 		siteName: 'Daniel Agbeni Portfolio',
 	},
 	twitter: {
 		card: 'summary_large_image',
-		title: 'Daniel Agbeni | Full Stack Developer & Cloud Engineer',
+		title: 'Daniel Agbeni',
 		description:
-			'Frontend Developer (React, Next.js), Backend Developer (Node.js, Express, MongoDB), and Cloud Engineer',
+			'I am Daniel Agbeni Oluwafemi, a skilled Full Stack Developer and Cloud Engineer. I specialize in creating scalable web solutions with modern technologies.',
 		creator: '@danielagbeni',
 	},
 	robots: {
@@ -66,6 +69,23 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		name: 'Daniel Agbeni Oluwafemi',
+		jobTitle: 'Founder & Full Stack Developer',
+		worksFor: {
+			'@type': 'Organization',
+			name: 'UploadDoc',
+		},
+		url: 'https://danielagbeni.uploaddoc.app',
+		sameAs: [
+			'https://www.linkedin.com/in/danielagbeni',
+			'https://github.com/danielagbeni',
+			'https://twitter.com/danielagbeni',
+		],
+	};
+
 	return (
 		<html lang="en">
 			<head>
@@ -81,6 +101,10 @@ export default function RootLayout({
 				<link
 					href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&display=swap"
 					rel="stylesheet"
+				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
 			</head>
 			<body className="font-sans">
