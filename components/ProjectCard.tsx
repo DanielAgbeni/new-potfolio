@@ -1,9 +1,10 @@
 'use client'
 
+import { memo } from 'react'
 import { motion } from 'framer-motion'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaGithub, FaExternalLinkAlt, FaMobileAlt } from 'react-icons/fa'
 import Image from 'next/image'
-import { Project } from '@/data/projects'
+import type { Project } from '@/data/projects'
 
 interface ProjectCardProps {
   project: Project
@@ -11,84 +12,79 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
+  const hasMobile = Boolean(project.mobileimg)
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      whileHover={{ y: -10 }}
-      className="bg-dark-200 border border-dark-400 rounded-2xl overflow-hidden hover:border-primary transition-all group"
+      transition={{ delay: index * 0.08 }}
+      whileHover={{ y: -6 }}
+      className="relative bg-dark-200 border border-dark-400 rounded-2xl overflow-hidden hover:border-primary transition-colors"
     >
-      {/* Project Images */}
-      <div className="relative h-64 bg-dark-300 p-4">
-        <div className="flex justify-center items-end gap-4 h-full">
-          {/* Mobile View */}
-          <div className="relative group/img">
+
+      {/* Image Preview */}
+      <div className="h-64 bg-dark-300 p-4 flex justify-center items-end gap-4">
+        {hasMobile && (
+          <div className="relative">
             <Image
               src={project.mobileimg}
-              alt={`${project.title} mobile view`}
-              width={120}
-              height={240}
-              className="rounded-lg shadow-lg hover:scale-110 transition-transform duration-300"
+              alt={`${project.title} mobile preview`}
+              width={110}
+              height={230}
+              className="rounded-lg shadow-lg"
             />
-            <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-gray-500 font-mono whitespace-nowrap">
-              Mobile
-            </span>
+            <FaMobileAlt className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-gray-500 text-xs" />
           </div>
+        )}
 
-          {/* PC View */}
-          <div className="relative group/img">
-            <Image
-              src={project.pcimg}
-              alt={`${project.title} PC view`}
-              width={200}
-              height={150}
-              className="rounded-lg shadow-lg hover:scale-110 transition-transform duration-300"
-            />
-            <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs text-gray-500 font-mono whitespace-nowrap">
-              Desktop
-            </span>
-          </div>
-        </div>
+        {/* Desktop View (always shown & prioritized) */}
+        <Image
+          src={project.pcimg}
+          alt={`${project.title} desktop preview`}
+          width={hasMobile ? 320 : 380}
+          height={200}
+          priority={index < 2} // load first 2 cards faster
+          className="rounded-xl shadow-lg object-cover"
+        />
       </div>
 
-      {/* Project Info */}
-      <div className="p-6 mt-4">
-        <h3 className="text-xl font-bold font-mono mb-3 text-gradient-green">
+      {/* Info */}
+      <div className="p-5 pt-6">
+        <h3 className="text-xl font-mono font-bold mb-2 text-gradient-green">
           {project.title}
         </h3>
-        <p className="text-gray-400 text-sm font-mono mb-6 line-clamp-3">
+
+        <p className="text-gray-400 text-xs font-mono mb-5 line-clamp-3">
           {project.description}
         </p>
 
         {/* Links */}
-        <div className="flex gap-4">
+        <div className="flex gap-3">
           <a
             href={project.link}
             target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary to-secondary text-dark-100 font-mono text-sm font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all flex-1 justify-center"
+            rel="noreferrer"
+            className="flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-primary to-secondary text-dark-100 font-mono text-xs font-semibold rounded-lg flex-1"
           >
-            <FaExternalLinkAlt className="text-sm" />
-            <span>Live Demo</span>
+            <FaExternalLinkAlt />
+            Live
           </a>
+
           <a
             href={project.githubLink}
             target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-dark-300 border border-dark-500 text-gray-400 hover:text-white hover:border-primary font-mono text-sm font-semibold rounded-lg transition-all"
-            aria-label="View on GitHub"
+            rel="noreferrer"
+            aria-label="GitHub repo"
+            className="flex items-center justify-center size-9 bg-dark-300 border border-dark-500 text-gray-400 hover:text-white hover:border-primary rounded-lg"
           >
-            <FaGithub className="text-xl" />
+            <FaGithub className="text-lg" />
           </a>
         </div>
       </div>
-
-      {/* Hover Effect Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-secondary/0 group-hover:from-primary/5 group-hover:to-secondary/5 transition-all pointer-events-none" />
     </motion.div>
   )
 }
 
-export default ProjectCard
+export default memo(ProjectCard)
