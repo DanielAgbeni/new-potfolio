@@ -36,7 +36,7 @@ const services = [
     title: 'Frontend Development',
     description:
       'Creating responsive and interactive user interfaces using modern frontend technologies like React, Next.js, and Tailwind CSS.',
-    color: 'from-primary to-secondary',
+    color: 'bg-primary-500',
     iconColor: 'text-primary',
   },
   {
@@ -44,7 +44,7 @@ const services = [
     title: 'Backend Development',
     description:
       'Building scalable server-side applications with Node.js, Express, and MongoDB for efficient data management and API development.',
-    color: 'from-secondary to-accent',
+    color: 'bg-secondary-500',
     iconColor: 'text-secondary',
   },
   {
@@ -52,7 +52,7 @@ const services = [
     title: 'Cloud Engineering',
     description:
       'Deploying and managing cloud infrastructure on AWS, Google Cloud with containerization using Docker and Kubernetes for scalability.',
-    color: 'from-accent to-primary',
+    color: 'bg-accent-500',
     iconColor: 'text-accent',
   },
 ]
@@ -63,7 +63,7 @@ const frontendSkills = [
   { name: 'JavaScript', icon: FaJsSquare, color: 'text-yellow-400' },
   { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500' },
   { name: 'React.js', icon: FaReact, color: 'text-primary' },
-  { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
+  { name: 'Next.js', icon: SiNextdotjs, color: 'text-text-50' },
   { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-secondary' },
   { name: 'Git', icon: FaGit, color: 'text-orange-600' },
 ]
@@ -71,14 +71,14 @@ const frontendSkills = [
 const frontendTools = [
   { name: 'VS Code', icon: FaCode, color: 'text-blue-500' },
   { name: 'Git Bash', icon: FaGit, color: 'text-orange-600' },
-  { name: 'Terminal', icon: FaTerminal, color: 'text-white' },
+  { name: 'Terminal', icon: FaTerminal, color: 'text-text-50' },
   { name: 'Figma', icon: FaFigma, color: 'text-purple-500' },
   { name: 'Chrome DevTools', icon: FaChrome, color: 'text-yellow-500' },
 ]
 
 const backendSkills = [
   { name: 'Node.js', icon: FaNodeJs, color: 'text-green-500' },
-  { name: 'Express.js', icon: SiExpress, color: 'text-white' },
+  { name: 'Express.js', icon: SiExpress, color: 'text-text-50' },
   { name: 'MongoDB', icon: SiMongodb, color: 'text-green-600' },
   { name: 'REST APIs', icon: FaServer, color: 'text-blue-500' },
   { name: 'Database Design', icon: FaDatabase, color: 'text-orange-500' },
@@ -87,7 +87,7 @@ const backendSkills = [
 const backendTools = [
   { name: 'Postman', icon: SiPostman, color: 'text-orange-500' },
   { name: 'MongoDB Compass', icon: SiMongodb, color: 'text-green-600' },
-  { name: 'Terminal', icon: FaTerminal, color: 'text-white' },
+  { name: 'Terminal', icon: FaTerminal, color: 'text-text-50' },
   { name: 'Git', icon: FaGit, color: 'text-orange-600' },
 ]
 
@@ -130,7 +130,7 @@ export default function Services() {
           <h1 className="text-5xl md:text-6xl font-bold font-mono mb-6">
             <span className="text-gradient">Services I Offer</span>
           </h1>
-          <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed font-mono">
+          <p className="text-text-300 max-w-3xl mx-auto text-lg leading-relaxed font-mono">
             I specialize in full-stack web development and cloud engineering,
             delivering visually stunning frontends, robust backend solutions, and
             scalable cloud infrastructure that align with your business goals.
@@ -149,15 +149,15 @@ export default function Services() {
               key={service.title}
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -10 }}
-              className="bg-dark-200 border border-dark-400 rounded-2xl p-8 hover:border-primary transition-all group"
+              className="bg-background-900 border border-background-700 rounded-2xl p-8 hover:border-primary transition-all group"
             >
-              <div className={`w-20 h-20 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:animate-pulse`}>
-                <service.icon className="text-4xl text-dark-100" />
+              <div className={`w-20 h-20 rounded-xl ${service.color} flex items-center justify-center mb-6`}>
+                <service.icon className="text-4xl text-background-950" />
               </div>
-              <h3 className="text-2xl font-bold font-mono mb-4 text-white">
+              <h3 className="text-2xl font-bold font-mono mb-4 text-text-50">
                 {service.title}
               </h3>
-              <p className="text-gray-400 font-mono text-sm">
+              <p className="text-text-300 font-mono text-sm">
                 {service.description}
               </p>
             </motion.div>
@@ -171,7 +171,7 @@ export default function Services() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-dark-200 border border-dark-400 rounded-2xl p-8"
+            className="bg-background-900 border border-background-700 rounded-2xl p-8"
           >
             <h3 className="text-2xl font-bold font-mono mb-6 text-gradient-green">
               Frontend Development
@@ -185,7 +185,7 @@ export default function Services() {
                   {frontendSkills.map((skill) => (
                     <li
                       key={skill.name}
-                      className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors font-mono text-sm group"
+                      className="flex items-center gap-3 text-text-300 hover:text-text-50 transition-colors font-mono text-sm group"
                     >
                       <skill.icon className={`${skill.color} text-xl group-hover:scale-110 transition-transform`} />
                       {skill.name}
@@ -201,7 +201,7 @@ export default function Services() {
                   {frontendTools.map((tool) => (
                     <li
                       key={tool.name}
-                      className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors font-mono text-sm group"
+                      className="flex items-center gap-3 text-text-300 hover:text-text-50 transition-colors font-mono text-sm group"
                     >
                       <tool.icon className={`${tool.color} text-xl group-hover:scale-110 transition-transform`} />
                       {tool.name}
@@ -217,7 +217,7 @@ export default function Services() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-dark-200 border border-dark-400 rounded-2xl p-8"
+            className="bg-background-900 border border-background-700 rounded-2xl p-8"
           >
             <h3 className="text-2xl font-bold font-mono mb-6 text-gradient-green">
               Backend Development
@@ -231,7 +231,7 @@ export default function Services() {
                   {backendSkills.map((skill) => (
                     <li
                       key={skill.name}
-                      className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors font-mono text-sm group"
+                      className="flex items-center gap-3 text-text-300 hover:text-text-50 transition-colors font-mono text-sm group"
                     >
                       <skill.icon className={`${skill.color} text-xl group-hover:scale-110 transition-transform`} />
                       {skill.name}
@@ -247,7 +247,7 @@ export default function Services() {
                   {backendTools.map((tool) => (
                     <li
                       key={tool.name}
-                      className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors font-mono text-sm group"
+                      className="flex items-center gap-3 text-text-300 hover:text-text-50 transition-colors font-mono text-sm group"
                     >
                       <tool.icon className={`${tool.color} text-xl group-hover:scale-110 transition-transform`} />
                       {tool.name}
@@ -263,7 +263,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-dark-200 border border-dark-400 rounded-2xl p-8 md:col-span-2"
+            className="bg-background-900 border border-background-700 rounded-2xl p-8 md:col-span-2"
           >
             <h3 className="text-2xl font-bold font-mono mb-6 text-gradient-green text-center">
               Cloud Engineering & DevOps
@@ -273,9 +273,9 @@ export default function Services() {
                 {cloudSkills.map((skill) => (
                   <li
                     key={skill.name}
-                    className="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors group"
+                    className="flex flex-col items-center gap-2 text-text-300 hover:text-text-50 transition-colors group"
                   >
-                    <div className="w-16 h-16 rounded-lg bg-dark-300 flex items-center justify-center group-hover:bg-dark-400 transition-all">
+                    <div className="w-16 h-16 rounded-lg bg-background-800 flex items-center justify-center group-hover:bg-background-700 transition-all">
                       <skill.icon className={`${skill.color} text-3xl group-hover:scale-110 transition-transform`} />
                     </div>
                     <span className="font-mono text-sm">{skill.name}</span>

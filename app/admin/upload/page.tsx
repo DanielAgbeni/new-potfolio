@@ -26,7 +26,7 @@ const UploadPage = () => {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-900 text-white">
+      <div className="flex min-h-screen items-center justify-center bg-background-950 text-text-50">
         Loading...
       </div>
     );
@@ -37,7 +37,7 @@ const UploadPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 px-4 py-12">
+    <div className="min-h-screen bg-background-950 px-4 py-12">
       <div className="flex flex-col items-center justify-center">
         <ProjectUploadForm />
       </div>

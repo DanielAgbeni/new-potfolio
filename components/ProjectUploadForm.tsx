@@ -72,11 +72,11 @@ const ProjectUploadForm = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl rounded-lg bg-gray-800 p-8 shadow-xl">
-      <h2 className="mb-6 text-2xl font-bold text-white">Upload New Project</h2>
+    <div className="w-full max-w-2xl rounded-lg bg-background-900 p-8 shadow-xl">
+      <h2 className="mb-6 text-2xl font-bold text-text-50">Upload New Project</h2>
       
       {status && (
-        <div className={`mb-4 rounded p-3 ${status.type === 'success' ? 'bg-green-600' : 'bg-red-600'} text-white`}>
+        <div className={`mb-4 rounded p-3 ${status.type === 'success' ? 'bg-green-600' : 'bg-red-600'} text-text-50`}>
           {status.message}
         </div>
       )}
@@ -84,10 +84,10 @@ const ProjectUploadForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         {/* Title */}
         <div>
-          <label className="block text-sm font-medium text-gray-400">Project Title</label>
+          <label className="block text-sm font-medium text-text-300">Project Title</label>
           <input
             {...register("title", { required: "Title is required" })}
-            className="w-full rounded bg-gray-700 p-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded bg-background-800 p-2 text-text-50 focus:outline-none focus:ring-2 focus:ring-primary"
             placeholder="My Awesome Project"
           />
           {errors.title && <p className="text-sm text-red-500">{errors.title.message}</p>}
@@ -95,11 +95,11 @@ const ProjectUploadForm = () => {
 
         {/* Description */}
         <div>
-          <label className="block text-sm font-medium text-gray-400">Description</label>
+          <label className="block text-sm font-medium text-text-300">Description</label>
           <textarea
             {...register("description", { required: "Description is required" })}
             rows={4}
-            className="w-full rounded bg-gray-700 p-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full rounded bg-background-800 p-2 text-text-50 focus:outline-none focus:ring-2 focus:ring-primary"
             placeholder="Brief description of the project..."
           />
           {errors.description && <p className="text-sm text-red-500">{errors.description.message}</p>}
@@ -108,19 +108,19 @@ const ProjectUploadForm = () => {
         {/* Links */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <label className="block text-sm font-medium text-gray-400">Live Link</label>
+            <label className="block text-sm font-medium text-text-300">Live Link</label>
             <input
               {...register("link", { required: "Live link is required" })}
-              className="w-full rounded bg-gray-700 p-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded bg-background-800 p-2 text-text-50 focus:outline-none focus:ring-2 focus:ring-primary"
               placeholder="https://example.com"
             />
             {errors.link && <p className="text-sm text-red-500">{errors.link.message}</p>}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-400">GitHub Link (Optional)</label>
+            <label className="block text-sm font-medium text-text-300">GitHub Link (Optional)</label>
             <input
               {...register("githubLink")}
-              className="w-full rounded bg-gray-700 p-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded bg-background-800 p-2 text-text-50 focus:outline-none focus:ring-2 focus:ring-primary"
               placeholder="https://github.com/..."
             />
           </div>
@@ -129,21 +129,21 @@ const ProjectUploadForm = () => {
         {/* Images */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <label className="block text-sm font-medium text-gray-400">PC Image (Required)</label>
+            <label className="block text-sm font-medium text-text-300">PC Image (Required)</label>
             <input
               type="file"
               accept="image/*"
               onChange={(e) => setPcImage(e.target.files?.[0] || null)}
-              className="w-full text-gray-400 file:mr-4 file:rounded file:border-0 file:bg-gray-600 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-500"
+              className="w-full text-text-300 file:mr-4 file:rounded file:border-0 file:bg-background-700 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-text-50 hover:file:bg-background-600"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-400">Mobile Image (Optional)</label>
+            <label className="block text-sm font-medium text-text-300">Mobile Image (Optional)</label>
             <input
               type="file"
               accept="image/*"
               onChange={(e) => setMobileImage(e.target.files?.[0] || null)}
-              className="w-full text-gray-400 file:mr-4 file:rounded file:border-0 file:bg-gray-600 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-500"
+              className="w-full text-text-300 file:mr-4 file:rounded file:border-0 file:bg-background-700 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-text-50 hover:file:bg-background-600"
             />
           </div>
         </div>
@@ -151,8 +151,8 @@ const ProjectUploadForm = () => {
         <button
           type="submit"
           disabled={loading}
-          className={`w-full rounded py-3 font-bold text-white transition ${
-            loading ? 'bg-gray-600 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+          className={`w-full rounded py-3 font-bold text-background-950 transition ${
+            loading ? 'bg-background-600 cursor-not-allowed' : 'bg-primary-500 hover:bg-primary-600'
           }`}
         >
           {loading ? 'Uploading...' : 'Upload Project'}

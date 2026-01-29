@@ -21,11 +21,11 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       viewport={{ once: true }}
       transition={{ delay: index * 0.08 }}
       whileHover={{ y: -6 }}
-      className="relative bg-dark-200 border border-dark-400 rounded-2xl overflow-hidden hover:border-primary transition-colors"
+      className="relative bg-background-900 border border-background-700 rounded-2xl overflow-hidden hover:border-primary transition-colors"
     >
 
       {/* Image Preview */}
-      <div className="h-64 bg-dark-300 p-4 flex justify-center items-end gap-4">
+      <div className="h-64 bg-background-800 p-4 flex justify-center items-end gap-4">
         {hasMobile && (
           <div className="relative">
             <Image
@@ -35,7 +35,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               height={230}
               className="rounded-lg shadow-lg"
             />
-            <FaMobileAlt className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-gray-500 text-xs" />
+            <FaMobileAlt className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-text-400 text-xs" />
           </div>
         )}
 
@@ -56,7 +56,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           {project.title}
         </h3>
 
-        <p className="text-gray-400 text-xs font-mono mb-5 line-clamp-3">
+        <p className="text-text-300 text-xs font-mono mb-5 line-clamp-3">
           {project.description}
         </p>
 
@@ -66,7 +66,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             href={project.link}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-primary to-secondary text-dark-100 font-mono text-xs font-semibold rounded-lg flex-1"
+            className="flex items-center justify-center gap-2 px-3 py-2 bg-primary-500 text-background-950 font-mono text-xs font-semibold rounded-lg flex-1 hover:bg-primary-600 transition-colors"
           >
             <FaExternalLinkAlt />
             Live
@@ -77,7 +77,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub repo"
-            className="flex items-center justify-center size-9 bg-dark-300 border border-dark-500 text-gray-400 hover:text-white hover:border-primary rounded-lg"
+            className="flex items-center justify-center size-9 bg-background-800 border border-background-600 text-text-300 hover:text-text-50 hover:border-primary rounded-lg"
           >
             <FaGithub className="text-lg" />
           </a>

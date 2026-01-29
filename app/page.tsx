@@ -40,7 +40,7 @@ export default function Home() {
 			href: 'https://github.com/DanielAgbeni',
 			icon: FaGithub,
 			label: 'GitHub',
-			color: 'hover:text-white',
+			color: 'hover:text-text-50',
 		},
 		{
 			href: 'https://twitter.com/Agbeni_Daniel',
@@ -98,8 +98,8 @@ export default function Home() {
 					animate={{ scale: 1, opacity: 1 }}
 					transition={{ type: 'spring', stiffness: 200, delay: 0.2 }}
 					className="relative mx-auto mb-8 w-48 h-48 md:w-56 md:h-56">
-					<div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent rounded-full animate-gradient p-1">
-						<div className="w-full h-full bg-dark-100 rounded-full p-2">
+					<div className="absolute inset-0 bg-primary-500 rounded-full p-1">
+						<div className="w-full h-full bg-background-950 rounded-full p-2">
 							<Image
 								src="/Daniel Agbeni.jpg"
 								alt="Daniel Agbeni"
@@ -119,7 +119,7 @@ export default function Home() {
 					animate={{ y: 0, opacity: 1 }}
 					transition={{ delay: 0.4 }}
 					className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-					<span className="text-white">Hi, I&apos;m </span>
+					<span className="text-text-50">Hi, I&apos;m </span>
 					<span className="text-gradient">Daniel Agbeni</span>
 				</motion.h1>
 
@@ -137,7 +137,7 @@ export default function Home() {
 					initial={{ y: 20, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
 					transition={{ delay: 0.8 }}
-					className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-8 font-mono">
+					className="text-text-300 text-lg md:text-xl max-w-2xl mx-auto mb-8 font-mono">
 					Crafting scalable web applications with modern technologies.
 					Specializing in React, Next.js, Node.js, and Cloud Infrastructure.
 				</motion.p>
@@ -158,7 +158,7 @@ export default function Home() {
 							initial={{ scale: 0 }}
 							animate={{ scale: 1 }}
 							transition={{ delay: 1 + index * 0.1, type: 'spring' }}
-							className={`w-14 h-14 flex items-center justify-center rounded-lg bg-dark-300 text-gray-400 ${link.color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}>
+							className={`w-14 h-14 flex items-center justify-center rounded-lg bg-background-800 text-text-300 ${link.color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}>
 							<link.icon className="text-2xl" />
 						</motion.a>
 					))}
@@ -171,12 +171,12 @@ export default function Home() {
 					transition={{ delay: 1.2 }}
 					className="flex flex-col sm:flex-row gap-4 justify-center">
 					<Link href="/about">
-						<button className="px-8 py-4 bg-gradient-to-r from-primary to-secondary text-dark-100 font-mono font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
+						<button className="px-8 py-4 bg-primary-500 text-background-950 font-mono font-semibold rounded-lg hover:bg-primary-600 hover:shadow-lg hover:scale-105 transition-all duration-300">
 							About Me
 						</button>
 					</Link>
 					<Link href="/portfolio">
-						<button className="px-8 py-4 bg-transparent border-2 border-primary text-primary font-mono font-semibold rounded-lg hover:bg-primary hover:text-dark-100 transition-all duration-300">
+						<button className="px-8 py-4 bg-transparent border-2 border-primary text-primary font-mono font-semibold rounded-lg hover:bg-primary hover:text-background-950 transition-all duration-300">
 							View Projects
 						</button>
 					</Link>
@@ -208,13 +208,13 @@ export default function Home() {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
-						className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+						className="fixed inset-0 z-50 flex items-center justify-center bg-background-950/90 backdrop-blur-sm"
 						onClick={() => setPreviewVisible(false)}>
 						<motion.div
 							initial={{ scale: 0.8 }}
 							animate={{ scale: 1 }}
 							exit={{ scale: 0.8 }}
-							className="relative p-2 bg-gradient-to-r from-primary via-secondary to-accent rounded-2xl"
+							className="relative p-2 bg-primary-500 rounded-2xl"
 							onClick={(e) => e.stopPropagation()}>
 							<Image
 								src="/Daniel Agbeni.jpg"

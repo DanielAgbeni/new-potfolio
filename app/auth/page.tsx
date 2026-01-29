@@ -33,50 +33,50 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-900 px-4">
-      <div className="w-full max-w-md rounded-lg bg-gray-800 p-8 shadow-lg">
-        <h2 className="mb-6 text-center text-3xl font-bold text-white">Admin Login</h2>
+    <div className="flex min-h-screen items-center justify-center bg-background-950 px-4">
+      <div className="w-full max-w-md rounded-lg bg-background-900 p-8 shadow-lg">
+        <h2 className="mb-6 text-center text-3xl font-bold text-text-50">Admin Login</h2>
         
         {error && <p className="mb-4 text-center text-red-500">{error}</p>}
 
         <form onSubmit={handleEmailLogin} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-400">Email</label>
+            <label className="block text-sm font-medium text-text-300">Email</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded bg-gray-700 p-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded bg-background-800 p-2 text-text-50 focus:outline-none focus:ring-2 focus:ring-primary"
               placeholder="admin@example.com"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-400">Password</label>
+            <label className="block text-sm font-medium text-text-300">Password</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full rounded bg-gray-700 p-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded bg-background-800 p-2 text-text-50 focus:outline-none focus:ring-2 focus:ring-primary"
               placeholder="••••••••"
             />
           </div>
           <button
             type="submit"
-            className="w-full rounded bg-blue-600 py-2 font-bold text-white hover:bg-blue-700 transition"
+            className="w-full rounded bg-primary-500 py-2 font-bold text-background-950 hover:bg-primary-600 transition"
           >
             Sign In
           </button>
         </form>
 
         <div className="my-4 flex items-center justify-between">
-          <hr className="w-full border-gray-600" />
-          <span className="px-2 text-gray-400">OR</span>
-          <hr className="w-full border-gray-600" />
+          <hr className="w-full border-background-700" />
+          <span className="px-2 text-text-300">OR</span>
+          <hr className="w-full border-background-700" />
         </div>
 
         <button
           onClick={handleGoogleLogin}
-          className="flex w-full items-center justify-center gap-2 rounded bg-white py-2 font-bold text-gray-900 hover:bg-gray-200 transition"
+          className="flex w-full items-center justify-center gap-2 rounded bg-text-50 py-2 font-bold text-background-950 hover:bg-text-100 transition"
         >
           <FcGoogle size={24} /> Sign in with Google
         </button>
