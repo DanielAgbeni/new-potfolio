@@ -26,9 +26,9 @@ import { MdWork, MdWorkHistory } from 'react-icons/md'
 import type { Metadata } from 'next'
 
 const technologies = [
-  { icon: FaCode, color: 'text-white', title: 'Programming' },
+  { icon: FaCode, color: 'text-text-50', title: 'Programming' },
   { icon: FaReact, color: 'text-primary', title: 'React' },
-  { icon: FaGithub, color: 'text-white', title: 'GitHub' },
+  { icon: FaGithub, color: 'text-text-50', title: 'GitHub' },
   { icon: FaGitAlt, color: 'text-orange-500', title: 'Git' },
   { icon: FaNodeJs, color: 'text-green-500', title: 'Node.js' },
   { icon: FaPython, color: 'text-yellow-400', title: 'Python' },
@@ -149,7 +149,7 @@ export default function About() {
           <h1 className="text-5xl md:text-6xl font-bold font-mono mb-6">
             <span className="text-gradient">About Me</span>
           </h1>
-          <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed mb-8 font-mono">
+          <p className="text-text-300 max-w-3xl mx-auto text-lg leading-relaxed mb-8 font-mono">
             I am Daniel Agbeni Oluwafemi, a skilled Full Stack Developer and Cloud Engineer.
             I specialize in creating scalable web solutions with modern technologies,
             while inspiring the next generation of developers as a coding instructor.
@@ -158,7 +158,7 @@ export default function About() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-dark-100 font-mono font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary-500 text-background-950 font-mono font-semibold rounded-lg shadow-lg hover:bg-primary-600 hover:shadow-xl transition-all"
             >
               Download CV <FaDownload />
             </motion.button>
@@ -184,10 +184,10 @@ export default function About() {
                 className="group relative flex flex-col items-center"
                 whileHover={{ scale: 1.1, y: -5 }}
               >
-                <div className="w-16 h-16 flex items-center justify-center rounded-lg bg-dark-300 group-hover:bg-dark-400 transition-all">
+                <div className="w-16 h-16 flex items-center justify-center rounded-lg bg-background-800 group-hover:bg-background-700 transition-all">
                   <tech.icon className={`text-4xl ${tech.color}`} />
                 </div>
-                <span className="mt-2 text-sm text-gray-400 font-mono opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="mt-2 text-sm text-text-300 font-mono opacity-0 group-hover:opacity-100 transition-opacity">
                   {tech.title}
                 </span>
               </motion.div>
@@ -203,7 +203,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-dark-200 border border-dark-400 rounded-2xl p-8 hover:border-primary transition-all"
+            className="bg-background-900 border border-background-700 rounded-2xl p-8 hover:border-primary transition-all"
           >
             <h3 className="text-2xl font-bold font-mono mb-6 flex items-center gap-3">
               <MdWork className="text-primary" />
@@ -213,10 +213,10 @@ export default function About() {
               {skills.map((skill, index) => (
                 <li
                   key={index}
-                  className="border-b border-dark-400 pb-4 last:border-none"
+                  className="border-b border-background-700 pb-4 last:border-none"
                 >
                   <strong className="text-primary font-mono">{skill.label}:</strong>
-                  <p className="text-gray-400 text-sm mt-1 font-mono">{skill.value}</p>
+                  <p className="text-text-300 text-sm mt-1 font-mono">{skill.value}</p>
                 </li>
               ))}
             </ul>
@@ -228,7 +228,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="bg-dark-200 border border-dark-400 rounded-2xl p-8 hover:border-secondary transition-all"
+            className="bg-background-900 border border-background-700 rounded-2xl p-8 hover:border-secondary transition-all"
           >
             <h3 className="text-2xl font-bold font-mono mb-6 flex items-center gap-3">
               <MdWorkHistory className="text-secondary" />
@@ -238,7 +238,7 @@ export default function About() {
               {experiences.map((exp, index) => (
                 <li
                   key={index}
-                  className="bg-dark-300 rounded-lg p-4 hover:bg-dark-400 transition-all"
+                  className="bg-background-800 rounded-lg p-4 hover:bg-background-700 transition-all"
                 >
                   <div className="font-bold text-primary font-mono text-sm">
                     {exp.title}
@@ -246,10 +246,10 @@ export default function About() {
                   <div className="text-secondary text-xs mt-1 font-mono">
                     {exp.company}
                   </div>
-                  <div className="text-gray-500 text-xs mb-2 font-mono">
+                  <div className="text-text-400 text-xs mb-2 font-mono">
                     {exp.period}
                   </div>
-                  <p className="text-gray-400 text-sm font-mono">{exp.description}</p>
+                  <p className="text-text-300 text-sm font-mono">{exp.description}</p>
                 </li>
               ))}
             </ul>
@@ -261,7 +261,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
-            className="bg-dark-200 border border-dark-400 rounded-2xl p-8 hover:border-accent transition-all"
+            className="bg-background-900 border border-background-700 rounded-2xl p-8 hover:border-accent transition-all"
           >
             <h3 className="text-2xl font-bold font-mono mb-6 flex items-center gap-3">
               <FaGraduationCap className="text-accent" />
@@ -271,16 +271,16 @@ export default function About() {
               {education.map((edu, index) => (
                 <li
                   key={index}
-                  className="bg-dark-300 rounded-lg p-4 hover:bg-dark-400 transition-all"
+                  className="bg-background-800 rounded-lg p-4 hover:bg-background-700 transition-all"
                 >
                   <div className="font-bold text-primary font-mono text-sm">
                     {edu.degree}
                   </div>
-                  <div className="text-gray-400 text-xs mt-1 font-mono">
+                  <div className="text-text-300 text-xs mt-1 font-mono">
                     {edu.institution}
                   </div>
                   <div className="flex items-center justify-between mt-2">
-                    <span className="text-gray-500 text-xs font-mono">{edu.period}</span>
+                    <span className="text-text-400 text-xs font-mono">{edu.period}</span>
                     <span
                       className={`text-xs font-mono px-2 py-1 rounded ${
                         edu.status === 'Ongoing'

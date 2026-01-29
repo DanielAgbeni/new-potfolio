@@ -52,7 +52,7 @@ console.log(projects)
           <h1 className="text-5xl md:text-6xl font-bold font-mono mb-6">
             <span className="text-gradient">My Projects</span>
           </h1>
-          <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed font-mono">
+          <p className="text-text-300 max-w-3xl mx-auto text-lg leading-relaxed font-mono">
             A showcase of my recent work in web development, from full-stack applications
             to modern frontend designs. Each project demonstrates my expertise in React,
             Next.js, Node.js, and cloud technologies.
@@ -79,14 +79,14 @@ console.log(projects)
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <p className="text-gray-400 font-mono mb-6">
+          <p className="text-text-300 font-mono mb-6">
             Interested in working together?
           </p>
           <a href="mailto:danielagbeni12@gmail.com">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-primary to-secondary text-dark-100 font-mono font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all"
+              className="px-8 py-4 bg-primary-500 text-background-950 font-mono font-semibold rounded-lg shadow-lg hover:bg-primary-600 hover:shadow-xl transition-all"
             >
               Get In Touch
             </motion.button>

@@ -61,16 +61,16 @@ const MigratePage = () => {
     setMigrating(false);
   };
 
-  if (loading) return <div className="p-10 text-white">Loading...</div>;
+  if (loading) return <div className="p-10 text-text-50">Loading...</div>;
   if (!authorized) return null;
 
   return (
-    <div className="min-h-screen bg-gray-900 p-8 text-white">
+    <div className="min-h-screen bg-background-950 p-8 text-text-50">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold mb-6">Migrate Projects to Firebase</h1>
         
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-          <p className="mb-4 text-gray-300">
+        <div className="bg-background-900 p-6 rounded-lg shadow-lg mb-6">
+          <p className="mb-4 text-text-300">
             Found <strong>{projects.length}</strong> hardcoded projects in <code>data/projects.ts</code>.
             Click below to upload them to Firestore.
           </p>
@@ -80,7 +80,7 @@ const MigratePage = () => {
             disabled={migrating}
             className={`w-full py-3 px-6 rounded font-bold transition ${
               migrating 
-                ? "bg-gray-600 cursor-not-allowed" 
+                ? "bg-background-600 cursor-not-allowed" 
                 : "bg-green-600 hover:bg-green-700"
             }`}
           >
@@ -88,9 +88,9 @@ const MigratePage = () => {
           </button>
         </div>
 
-        <div className="bg-black p-4 rounded border border-gray-700 h-96 overflow-y-auto font-mono text-sm">
+        <div className="bg-background-950 p-4 rounded border border-background-700 h-96 overflow-y-auto font-mono text-sm">
           {logs.length === 0 ? (
-            <span className="text-gray-500">Waiting to start...</span>
+            <span className="text-text-400">Waiting to start...</span>
           ) : (
             logs.map((log, idx) => (
               <div key={idx} className="mb-1">{log}</div>

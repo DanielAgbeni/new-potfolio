@@ -46,7 +46,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-dark-100/95 backdrop-blur-lg border-b border-dark-400'
+          ? 'bg-background-950/95 backdrop-blur-lg border-b border-background-700'
           : 'bg-transparent'
       }`}
     >
@@ -55,10 +55,10 @@ const Header = () => {
           {/* Logo */}
           <Link href="/" className="relative group">
             <span className="text-2xl font-mono font-bold">
-              <span className="text-white">Daniel</span>
+              <span className="text-text-50">Daniel</span>
               <span className="text-gradient"> Agbeni</span>
             </span>
-            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300" />
+            <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -70,7 +70,7 @@ const Header = () => {
                   className={`relative font-mono text-lg transition-colors duration-300 ${
                     pathname === link.path
                       ? 'text-primary'
-                      : 'text-gray-400 hover:text-white'
+                      : 'text-text-300 hover:text-text-50'
                   }`}
                 >
                   {link.name}
@@ -90,7 +90,7 @@ const Header = () => {
           {/* Contact Button - Desktop */}
           <button
             onClick={() => setIsContactOpen(!isContactOpen)}
-            className="hidden md:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-secondary text-dark-100 font-mono font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 glow-primary"
+            className="hidden md:flex items-center gap-2 px-6 py-3 bg-primary-500 text-background-950 font-mono font-semibold rounded-lg hover:bg-primary-600 hover:shadow-lg hover:scale-105 transition-all duration-300 glow-primary"
           >
             <FaPhone />
             <span>Contact</span>
@@ -115,7 +115,7 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="md:hidden absolute top-20 left-4 right-4 bg-dark-200 border border-dark-400 rounded-lg shadow-xl overflow-hidden"
+              className="md:hidden absolute top-20 left-4 right-4 bg-background-900 border border-background-700 rounded-lg shadow-xl overflow-hidden"
             >
               <ul className="py-4">
                 {navLinks.map((link) => (
@@ -125,8 +125,8 @@ const Header = () => {
                       onClick={() => setIsMenuOpen(false)}
                       className={`block px-6 py-3 font-mono text-lg transition-colors ${
                         pathname === link.path
-                          ? 'text-primary bg-dark-300'
-                          : 'text-gray-400 hover:text-white hover:bg-dark-300'
+                          ? 'text-primary bg-background-800'
+                          : 'text-text-300 hover:text-text-50 hover:bg-background-800'
                       }`}
                     >
                       {link.name}
@@ -139,7 +139,7 @@ const Header = () => {
                       setIsMenuOpen(false)
                       setIsContactOpen(true)
                     }}
-                    className="w-full text-left px-6 py-3 font-mono text-lg text-gray-400 hover:text-white hover:bg-dark-300 transition-colors"
+                    className="w-full text-left px-6 py-3 font-mono text-lg text-text-300 hover:text-text-50 hover:bg-background-800 transition-colors"
                   >
                     Contact
                   </button>
